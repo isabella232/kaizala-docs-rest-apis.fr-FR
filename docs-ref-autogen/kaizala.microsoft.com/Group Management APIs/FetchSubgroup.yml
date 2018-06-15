@@ -1,0 +1,118 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchsubgroup
+name: Fetch Subgroup
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: '1.0'
+summary: |-
+  Cette API est utilisée pour extraire les sous-groupes d’un groupe  
+   Extraction des sous-groupes d’un groupe
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'GET https://{endpoint-url}/v1/groups/{test-group-id}/subGroups'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: GUID associé au groupe donné
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+    types:
+      - uid: Response - Fetch subGroup of a group
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Reçu à partir de la fin de l’authentification par jeton d’accès
+    types:
+      - uid: string
+definitions:
+  - name: Response - Fetch subGroup of a group
+    description: Sub-group(s) d’extraction d’un groupe
+    kind: object
+    properties:
+      - name: groupName
+        description: Nom du groupe
+        types:
+          - uid: string
+      - name: groupId
+        description: GUID associé au groupe
+        types:
+          - uid: string
+      - name: groupImageUrl
+        description: 'Chaîne spécifiant l’URL de l’image de profil de groupe '
+        types:
+          - uid: string
+      - name: hasSubGroups
+        description: 'Renvoie la valeur true, si le groupe a des sous-groupes'
+        types:
+          - uid: boolean
+      - name: hasParentGroups
+        description: 'Renvoie la valeur true, si le groupe possède les groupes parents'
+        types:
+          - uid: boolean
+      - name: isMappedToTenant
+        description: 'Renvoie la valeur true, si le groupe est mappé en tant que groupe d’organisation'
+        types:
+          - uid: boolean
+      - name: groupType
+        description: Groupe / connecter le groupe. Groupe Connect fait référence au groupe Public gérés.
+        types:
+          - uid: string
+      - name: subGroups
+        description: Tableau des sous-groupes qu’en fonction de groupe a
+        types:
+          - uid: SubGroup
+            isArray: true
+      - name: welcomeMessage
+        description: Bienvenue dans le Message qui s’affiche à nouveau joinees dans le groupe
+        types:
+          - uid: string
+  - name: SubGroup
+    description: Sous-groupe
+    kind: object
+    properties:
+      - name: groupName
+        description: Nom du groupe
+        types:
+          - uid: string
+      - name: groupId
+        description: GUID associé au groupe
+        types:
+          - uid: string
+      - name: groupImageUrl
+        description: 'Chaîne spécifiant l’URL de l’image de profil de groupe '
+        types:
+          - uid: string
+      - name: hasSubGroups
+        description: 'Renvoie la valeur true, si le groupe a des sous-groupes'
+        types:
+          - uid: boolean
+      - name: hasParentGroups
+        description: 'Renvoie la valeur true, si le groupe possède les groupes parents'
+        types:
+          - uid: boolean
+      - name: isMappedToTenant
+        description: 'Renvoie la valeur true, si le groupe est mappé en tant que groupe d’organisation'
+        types:
+          - uid: boolean
+      - name: groupType
+        description: Groupe / connecter le groupe. Groupe Connect fait référence au groupe Public gérés.
+        types:
+          - uid: string
+      - name: isDuplicate
+        description: 'Renvoie la valeur true, s’il est fourni groupid existe déjà'
+        types:
+          - uid: boolean
+      - name: welcomeMessage
+        description: 'Bienvenue dans le Message qui s’affiche à nouveau joinees dans le groupe '
+        types:
+          - uid: string
+examples: []
+security: []

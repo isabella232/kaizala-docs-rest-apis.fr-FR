@@ -1,0 +1,83 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.getrefreshtoken
+name: Get Refresh Token
+service: Kaizala
+groupName: Authentication APIs
+apiVersion: '1.0'
+summary: |-
+  Connectez-vous à l’aide de code confidentiel et obtenir le jeton actualisation applicationId  
+  Cette API génère le jeton d’actualisation pour l’Id de connecteur d’Application donné, lorsque le code confidentiel, numéro de téléphone mobile et Id de connecteur d’Application est fourni.
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://api.kaiza.la/v1/loginWithPinAndApplicationId'
+uriParameters: []
+responses:
+  - name: 200 OK
+    description: ''
+    types:
+      - uid: Response - Refresh Token
+requestBody:
+  - parameters:
+      - name: mobileNumber
+        in: body
+        isRequired: true
+        description: Numéro de téléphone mobile pour lequel jeton est générée
+        types:
+          - uid: string
+      - name: applicationId
+        in: body
+        isRequired: true
+        description: ID associé au connecteur
+        types:
+          - uid: string
+      - name: pin
+        in: body
+        isRequired: true
+        description: UNIQUE envoyée au numéro de mobile donné
+        types:
+          - uid: integer
+requestHeader:
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: application/json
+    types:
+      - uid: string
+definitions:
+  - name: Response - Refresh Token
+    description: Connectez-vous à l’aide de code confidentiel et obtenir le jeton actualisation applicationId
+    kind: object
+    properties:
+      - name: refreshToken
+        description: refreshToken partagée par l’administrateur de groupe Kaizala lorsque le connecteur respectif a été accordé l’accès au groupe
+        types:
+          - uid: string
+      - name: grantedScope
+        description: Étendue d’accès qui a reçu l’Application/connecteur donné
+        types:
+          - uid: string
+      - name: refreshTokenExpiry
+        description: Il indique le délai d’expiration pour refreshToken dans time(milliseconds) époque
+        types:
+          - uid: integer
+  - name: Request - Refresh Token
+    description: Connectez-vous à l’aide de code confidentiel et obtenir le jeton actualisation applicationId
+    kind: object
+    properties:
+      - name: mobileNumber
+        description: Numéro de téléphone mobile pour lequel jeton est générée
+        types:
+          - uid: string
+      - name: applicationId
+        description: ID associé au connecteur
+        types:
+          - uid: string
+      - name: pin
+        description: UNIQUE envoyée au numéro de mobile donné
+        types:
+          - uid: integer
+examples: []
+security: []

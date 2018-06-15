@@ -1,0 +1,122 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingsurveyresponse
+name: Posting Survey Response
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: '1.0'
+summary: |-
+  Publier une réponse à une enquête  
+  Cette API vous permet de valider une réponse à une enquête donnée
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-survey-id}/responses'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: GUID associé au groupe donné
+    types:
+      - uid: string
+  - name: test-survey-id
+    in: path
+    isRequired: true
+    description: ''
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: actionType
+        in: body
+        isRequired: true
+        description: Type d’action
+        types:
+          - uid: string
+      - name: actionBody
+        in: body
+        isRequired: true
+        description: Corps d’Action enquête
+        types:
+          - uid: SurveyActionBody
+requestHeader:
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: application/json
+    types:
+      - uid: string
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Reçu à partir de la fin de l’authentification par jeton d’accès
+    types:
+      - uid: string
+definitions:
+  - name: SurveyActionBody
+    description: Corps d’Action enquête
+    kind: object
+    properties:
+      - name: responseName
+        description: Nom de la réponse
+        types:
+          - uid: string
+      - name: responseLocation
+        description: ResponseLocation
+        types:
+          - uid: ResponseLocation
+      - name: Answers
+        description: Réponse
+        types:
+          - uid: Answer
+            isArray: true
+  - name: Request - PostingAResponseToASurvey
+    description: Publier une réponse à une enquête
+    kind: object
+    properties:
+      - name: actionType
+        description: Type d’action
+        types:
+          - uid: string
+      - name: actionBody
+        description: Corps d’Action enquête
+        types:
+          - uid: SurveyActionBody
+  - name: ResponseLocation
+    description: ResponseLocation
+    kind: object
+    properties:
+      - name: latitude
+        description: Latitude coordonnées de l’emplacement
+        types:
+          - uid: integer
+      - name: longitude
+        description: Longitude coordonnées de l’emplacement
+        types:
+          - uid: integer
+      - name: name
+        description: Nom de l’endroit où les coordonnées de l’emplacement correspond à
+        types:
+          - uid: string
+  - name: Answer
+    description: Réponse
+    kind: object
+    properties:
+      - name: lt
+        description: Latitude coordonnées de l’emplacement
+        types:
+          - uid: integer
+      - name: lg
+        description: Longitude coordonnées de l’emplacement
+        types:
+          - uid: integer
+      - name: 'n'
+        description: ''
+        types:
+          - uid: string
+examples: []
+security: []

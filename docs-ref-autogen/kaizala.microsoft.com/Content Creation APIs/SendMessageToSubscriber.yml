@@ -1,0 +1,79 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendmessagetosubscriber
+name: Send Message To Subscriber
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: '1.0'
+summary: |-
+  Envoyer un message aux abonnés dans un groupe public  
+  Cette API vous permet d’envoyer un message aux abonnés dans un groupe public
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://api.kaiza.la/v1/groups/{test-public-group-id}/messages'
+uriParameters:
+  - name: test-public-group-id
+    in: path
+    isRequired: true
+    description: ''
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: Message
+        in: body
+        isRequired: true
+        description: Message texte envoyé (limite maximale de 1 000 caractères)
+        types:
+          - uid: string
+      - name: subscribers
+        in: body
+        isRequired: true
+        description: Chaque élément correspond à un numéro de téléphone mobile (avec le code du pays. Par exemple. +911999999999). Message texte sera envoyé uniquement pour les abonnés sélectionnés. À utiliser pour la communication sélective aux abonnés dans le contexte d’un groupe Public
+        types:
+          - uid: string
+            isArray: true
+      - name: sendToAllSubscribers
+        in: body
+        isRequired: true
+        description: "Par défaut\_: false. Valide uniquement dans les cas groupId appartient à un groupe Public. True pour envoyer le message à tous les abonnés qui requiert l’utilisateur du jeton admin du groupe Public"
+        types:
+          - uid: boolean
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Reçu à partir de la fin de l’authentification par jeton d’accès
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: application/json
+    types:
+      - uid: string
+definitions:
+  - name: Request - SendMessageToSubscriber(s)InAPublicGroup
+    description: Envoyer un message aux abonnés dans un groupe public
+    kind: object
+    properties:
+      - name: Message
+        description: Message texte envoyé (limite maximale de 1 000 caractères)
+        types:
+          - uid: string
+      - name: subscribers
+        description: Chaque élément correspond à un numéro de téléphone mobile (avec le code du pays. Par exemple. +911999999999). Message texte sera envoyé uniquement pour les abonnés sélectionnés. À utiliser pour la communication sélective aux abonnés dans le contexte d’un groupe Public
+        types:
+          - uid: string
+            isArray: true
+      - name: sendToAllSubscribers
+        description: "Par défaut\_: false. Valide uniquement dans les cas groupId appartient à un groupe Public. True pour envoyer le message à tous les abonnés qui requiert l’utilisateur du jeton admin du groupe Public"
+        types:
+          - uid: boolean
+examples: []
+security: []

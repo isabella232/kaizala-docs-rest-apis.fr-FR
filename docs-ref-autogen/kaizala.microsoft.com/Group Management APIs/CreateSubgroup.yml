@@ -1,0 +1,87 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.createsubgroup
+name: Create Subgroup
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: '1.0'
+summary: "Créer un groupe sub  \nAPI pour créer un groupe.\nParamètres facultatifs\_: membres\_: tableau de chaînes. Chaque chaîne est le numéro de téléphone mobile (avec le code du pays). Chaînes max-100\n    \n    GroupType: Group/ConnectGroup. ConnectGroup for Managed public group."
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://{endpoint-url}/v1/groups/{test-group-id}/subgroups'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: GUID associé au groupe donné
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: name
+        in: body
+        isRequired: true
+        description: Nom de groupe
+        types:
+          - uid: string
+      - name: welcomeMessage
+        in: body
+        isRequired: true
+        description: Message de bienvenue qui s’affiche à nouveau membre du groupe
+        types:
+          - uid: string
+      - name: members
+        in: body
+        isRequired: true
+        description: "Numéro de Mobile (avec le code du pays) des membres à ajouter. Valeur par défaut\_: Utilisateur du jeton d’accès sera ajouté en tant qu’administrateur du groupe"
+        types:
+          - uid: string
+            isArray: true
+      - name: groupType
+        in: body
+        isRequired: true
+        description: "Enum\_: Groupe/ConnectGroup. ConnectGroup créera un groupe Public gérés. Par défaut\_: groupe"
+        types:
+          - uid: string
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Reçu à partir de la fin de l’authentification par jeton d’accès
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: application/json
+    types:
+      - uid: string
+definitions:
+  - name: Request - Create a managed public group
+    description: Créer un groupe public géré
+    kind: object
+    properties:
+      - name: name
+        description: Nom de groupe
+        types:
+          - uid: string
+      - name: welcomeMessage
+        description: Message de bienvenue qui s’affiche à nouveau membre du groupe
+        types:
+          - uid: string
+      - name: members
+        description: "Numéro de Mobile (avec le code du pays) des membres à ajouter. Valeur par défaut\_: Utilisateur du jeton d’accès sera ajouté en tant qu’administrateur du groupe"
+        types:
+          - uid: string
+            isArray: true
+      - name: groupType
+        description: "Enum\_: Groupe/ConnectGroup. ConnectGroup créera un groupe Public gérés. Par défaut\_: groupe"
+        types:
+          - uid: string
+examples: []
+security: []

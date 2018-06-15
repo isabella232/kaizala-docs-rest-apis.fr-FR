@@ -1,0 +1,41 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.getallwebhooks
+name: Get All Webhooks
+service: Kaizala
+groupName: Subscription Webhooks
+apiVersion: '1.0'
+summary: |-
+  Obtenir tous les webhooks sur un groupe  
+  Cette API renvoie tous les webhooks sur un groupe
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'GET https://{endpoint-url}/v1/webhook?objectId={objectId}&objectType={objectType}'
+uriParameters:
+  - name: objectId
+    in: query
+    isRequired: true
+    description: 'Identificateur représentant l’objet dans le contexte dans lequel les webhooks doivent être créés. Pour l’argument typeobjet = groupe, l’identificateur de son groupe, pour ObjectType = Action, son actionId, pour ObjectType = ActionPackage, son id de package d’action'
+    types:
+      - uid: string
+  - name: objectType
+    in: query
+    isRequired: true
+    description: "Enum\_: Groupe/Action/ActionPackage"
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Reçu à partir de la fin de l’authentification par jeton d’accès
+    types:
+      - uid: string
+definitions: []
+examples: []
+security: []

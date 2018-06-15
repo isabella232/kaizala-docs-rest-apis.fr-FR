@@ -1,0 +1,101 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postcustomactionsubscriber
+name: Post Custom Action Subscriber
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: '1.0'
+summary: |-
+  Publier une action personnalisée pour les abonnés dans un groupe public  
+  Cette API vous permet de valider une action personnalisée à subscibers dans un groupe public
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://{endpoint-url}/v1/groups/{test-public-group-id}/actions'
+uriParameters:
+  - name: test-public-group-id
+    in: path
+    isRequired: true
+    description: GUID associé au groupe public donné
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: id
+        in: body
+        isRequired: true
+        description: Id de Package d’action
+        types:
+          - uid: string
+      - name: actionBody
+        in: body
+        isRequired: true
+        description: Action personnalisée envoyées à un abonné
+        types:
+          - uid: SubscribersCustomActionBody
+      - name: subscribers
+        in: body
+        isRequired: true
+        description: ''
+        types:
+          - uid: string
+            isArray: true
+      - name: sendToAllSubscribers
+        in: body
+        isRequired: true
+        description: ''
+        types:
+          - uid: boolean
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Reçu à partir de la fin de l’authentification par jeton d’accès
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: application/json
+    types:
+      - uid: string
+definitions:
+  - name: SubscribersCustomActionBody
+    description: Action personnalisée envoyées à un abonné
+    kind: object
+    properties:
+      - name: title
+        description: Titre
+        types:
+          - uid: string
+      - name: validity
+        description: Validité
+        types:
+          - uid: integer
+  - name: Request - Send Custom Action To Subscriber(s)
+    description: Publier une action personnalisée pour les abonnés dans un groupe public
+    kind: object
+    properties:
+      - name: id
+        description: Id de Package d’action
+        types:
+          - uid: string
+      - name: actionBody
+        description: Action personnalisée envoyées à un abonné
+        types:
+          - uid: SubscribersCustomActionBody
+      - name: subscribers
+        description: ''
+        types:
+          - uid: string
+            isArray: true
+      - name: sendToAllSubscribers
+        description: ''
+        types:
+          - uid: boolean
+examples: []
+security: []

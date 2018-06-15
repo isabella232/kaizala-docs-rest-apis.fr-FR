@@ -1,0 +1,39 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis.fetchjobs
+name: Fetch Jobs
+service: Kaizala
+groupName: Content Query APIs
+apiVersion: '1.0'
+summary: Extraction des travaux dans un groupe
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'GET https://{endpoint-url}/v1/groups/{test-group-id}/actions?actionType={actionType}'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: GUID associé au groupe donné
+    types:
+      - uid: string
+  - name: actionType
+    in: query
+    isRequired: true
+    description: Type d’Action
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Reçu à partir de la fin de l’authentification par jeton d’accès
+    types:
+      - uid: string
+definitions: []
+examples: []
+security: []

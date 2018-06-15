@@ -1,0 +1,17 @@
+### YamlMime:RESTOperationGroup
+uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks
+name: Subscription Webhooks
+summary: 'Microsoft Kaizala API permet également aux développeurs d’enregistrer des événements spécifiques au sein de la plateforme Kaizala via WebHooks. <br />  WebHooks est un modèle HTTP léger fournit un modèle d’éditeur/abonné simple pour câblage ensemble SaaS et les API de Web services. Lorsqu’un événement se produit dans Kaizala, une notification est envoyée sous la forme d’une demande HTTP POST pour les abonnés. La demande POST contient des informations sur l’événement qui rend possible pour le récepteur d’agir en conséquence. <br /> <br />  À l’aide de WebHooks, vous pouvez vous abonner à différents événements qui se produisent dans un contexte de groupe de conversation dans Kaizala.'
+apiVersion: '1.0'
+service: Kaizala
+operations:
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.getallwebhooks
+    summary: |-
+      Obtenir tous les webhooks sur un groupe  
+      Cette API renvoie tous les webhooks sur un groupe
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.subscribetoallevents
+    summary: S’abonner à tous les événements au niveau de l’action
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.unsubscribingawebhook
+    summary: |-
+      Interruption de l’abonnement awebhook  
+      Annulation d’un webhook

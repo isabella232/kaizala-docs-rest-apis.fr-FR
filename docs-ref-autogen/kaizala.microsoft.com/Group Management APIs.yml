@@ -1,0 +1,53 @@
+### YamlMime:RESTOperationGroup
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis
+name: Group Management APIs
+summary: Ces API permettent admin(s) de groupe accéder aux ressources de groupe et de gérer les appartenances aux groupes en conséquence. <br />
+apiVersion: '1.0'
+service: Kaizala
+operations:
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addmembers
+    summary: |-
+      Ajouter des membres à un groupe  
+      Cette API permet à l’ajout de membres à un groupe
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubgroup
+    summary: |-
+      Cette API permet d’ajouter vous permet de groupe comme un groupe vers un autre groupe secondaire  
+      Ajouter le groupe comme un groupe secondaire à un autre groupe
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubscribers
+    summary: |-
+      Ajouter les abonnés à un groupe public  
+      Cette API ajoute les abonnés à un groupe public
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.creategroup
+    summary: "Créer un groupe  \nCette API permet de créer un un groupe, y compris des groupes publics gérées. Il prend un tableau de chaînes comme entrée. Chaque chaîne est le numéro de téléphone mobile (avec le code du pays). Cette API peut prendre au maximum 100 numéros de téléphone portable comme entrée.\nGroupType\_: Groupe/ConnectGroup. ConnectGroup pour le groupe public géré."
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.createsubgroup
+    summary: "Créer un groupe sub  \nAPI pour créer un groupe.\nParamètres facultatifs\_: membres\_: tableau de chaînes. Chaque chaîne est le numéro de téléphone mobile (avec le code du pays). Chaînes max-100\n    \n    GroupType: Group/ConnectGroup. ConnectGroup for Managed public group."
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchdirectgroups
+    summary: |-
+      Extraction des groupes directs  
+      Cette API retourne tous les groupes directes attachés à l’utilisateur
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchgroupdetails
+    summary: |-
+      Extraction des détails de groupe  
+      Cette API peut être utilisée pour extraire les détails d’un groupe
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchmembers
+    summary: |-
+      Extraction des membres d’un groupe  
+      Cette API renvoie la liste des membres d’un groupe
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchsubgroup
+    summary: |-
+      Cette API est utilisée pour extraire les sous-groupes d’un groupe  
+       Extraction des sous-groupes d’un groupe
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.getsubscribers
+    summary: |-
+      Obtenir les abonnés à un groupe public  
+      Cette API extrait la liste des abonnés à un groupe public géré
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removegroupassubgroup
+    summary: Supprimer le groupe comme un groupe vers un autre groupe secondaire
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removemembers
+    summary: |-
+      Supprimer des membres d’un groupe  
+      Cette API permet à des suppressions de membres d’un groupe
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removesubscribers
+    summary: |-
+      Supprimer les abonnés à partir d’un groupe public  
+      Cette API permet à un utilisateur pour supprimer les abonnés à partir d’un groupe public

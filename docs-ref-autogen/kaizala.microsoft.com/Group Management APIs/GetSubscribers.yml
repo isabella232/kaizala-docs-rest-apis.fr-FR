@@ -1,0 +1,67 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.getsubscribers
+name: Get Subscribers
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: '1.0'
+summary: |-
+  Obtenir les abonnés à un groupe public  
+  Cette API extrait la liste des abonnés à un groupe public géré
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://{endpoint-url}/v1/groups/{test-public-group-id}/subscribers'
+uriParameters:
+  - name: test-public-group-id
+    in: path
+    isRequired: true
+    description: ''
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: count
+        in: body
+        isRequired: true
+        description: Nombre d’abonnés dans le groupe Public
+        types:
+          - uid: integer
+      - name: cursor
+        in: body
+        isRequired: true
+        description: Début du jeu de résultats. Pour la pagination. Pour être utilisé dans le corps de la requête pour extraire le résultat suivant défini. Présenter en réponse uniquement s’il existe un jeu de résultats valide suivant.
+        types:
+          - uid: string
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Reçu à partir de la fin de l’authentification par jeton d’accès
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: application/json
+    types:
+      - uid: string
+definitions:
+  - name: Request - Subscribers of a public group
+    description: Obtenir les abonnés à un groupe public
+    kind: object
+    properties:
+      - name: count
+        description: Nombre d’abonnés dans le groupe Public
+        types:
+          - uid: integer
+      - name: cursor
+        description: Début du jeu de résultats. Pour la pagination. Pour être utilisé dans le corps de la requête pour extraire le résultat suivant défini. Présenter en réponse uniquement s’il existe un jeu de résultats valide suivant.
+        types:
+          - uid: string
+examples: []
+security: []

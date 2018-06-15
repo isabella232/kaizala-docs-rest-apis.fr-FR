@@ -1,0 +1,19 @@
+### YamlMime:RESTOperationGroup
+uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis
+name: Authentication APIs
+summary: Ces API vous aider à l’accès pour les systèmes tiers 3e interagir avec une plateforme d’API Kaizala. Kaizala implémente le mécanisme d’autorisation en fonction de jeton personnalisé. Ce mécanisme utilise le concept d’actualisation et les jetons d’accès pour gérer les autorisations d’accès pour les API de plateforme Kaizala. /n
+apiVersion: '1.0'
+service: Kaizala
+operations:
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generateaccesstoken
+    summary: |-
+      Récupérer le jeton d’accès  
+      Cette API génère le jeton d’accès pour accéder aux ressources de Kaizala, lorsque le jeton d’actualisation, Id de connecteur d’Application et le Secret de connecteur d’Application est fourni.
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generatepin
+    summary: |-
+      Générer du code confidentiel unique  
+      Cette API génère le code confidentiel unique pour un numéro de téléphone mobile, lors de l’Id de connecteur d’Application est fourni.
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.getrefreshtoken
+    summary: |-
+      Connectez-vous à l’aide de code confidentiel et obtenir le jeton actualisation applicationId  
+      Cette API génère le jeton d’actualisation pour l’Id de connecteur d’Application donné, lorsque le code confidentiel, numéro de téléphone mobile et Id de connecteur d’Application est fourni.

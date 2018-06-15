@@ -1,0 +1,35 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removemembers
+name: Remove Members
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: '1.0'
+summary: |-
+  Supprimer des membres d’un groupe  
+  Cette API permet à des suppressions de membres d’un groupe
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'DELETE https://{endpoint-url}/v1/groups/{test-group-id}/members/364388bc-5b7f-4857-a58c-31eba18e962e'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: GUID associé au groupe donné
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Reçu à partir de la fin de l’authentification par jeton d’accès
+    types:
+      - uid: string
+definitions: []
+examples: []
+security: []

@@ -1,0 +1,63 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generateaccesstoken
+name: Generate Access Token
+service: Kaizala
+groupName: Authentication APIs
+apiVersion: '1.0'
+summary: |-
+  Récupérer le jeton d’accès  
+  Cette API génère le jeton d’accès pour accéder aux ressources de Kaizala, lorsque le jeton d’actualisation, Id de connecteur d’Application et le Secret de connecteur d’Application est fourni.
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'GET https://api.kaiza.la/v1/accessToken'
+uriParameters: []
+responses:
+  - name: 200 OK
+    description: ''
+    types:
+      - uid: Response - Access Token
+requestHeader:
+  - name: applicationId
+    in: header
+    isRequired: true
+    description: ID associé au connecteur
+    types:
+      - uid: string
+  - name: applicationSecret
+    in: header
+    isRequired: true
+    description: Secret associé au connecteur
+    types:
+      - uid: string
+  - name: refreshToken
+    in: header
+    isRequired: true
+    description: refreshToken partagée par l’administrateur de groupe Kaizala lorsque le connecteur respectif a été accordé l’accès au groupe
+    types:
+      - uid: string
+definitions:
+  - name: Response - Access Token
+    description: Récupérer le jeton d’accès
+    kind: object
+    properties:
+      - name: accessToken
+        description: Reçu à partir de la fin de l’authentification par jeton d’accès
+        types:
+          - uid: string
+      - name: endpointUrl
+        description: 'Authentification réussie, une url de point de terminaison est renvoyée qui doivent être utilisées comme url de base d’api pour effectuer des appels d’API suivants'
+        types:
+          - uid: string
+      - name: accessTokenExpiry
+        description: Il indique le délai d’expiration pour accessToken dans time(milliseconds) époque
+        types:
+          - uid: integer
+      - name: scope
+        description: Étendue des autorisations sur les ressources Kaizala offrant un accès jeton
+        types:
+          - uid: string
+examples: []
+security: []
