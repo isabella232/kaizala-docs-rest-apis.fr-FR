@@ -1,0 +1,87 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.createsubgroup
+name: Create Subgroup
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: '1.0'
+summary: "<span data-ttu-id=\"7e1d7-101\">Créer un groupe sub</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-101\">Create a  sub group</span></span>  \n<span data-ttu-id=\"7e1d7-102\">API pour créer un groupe.</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-102\">API to create a group.</span></span>\n<span data-ttu-id=\"7e1d7-103\">Paramètres facultatifs\_: membres\_: tableau de chaînes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-103\">Optional parameters: Members: string array.</span></span> <span data-ttu-id=\"7e1d7-104\">Chaque chaîne est le numéro de téléphone mobile (avec le code du pays).</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-104\">Each string is mobile number(with country code).</span></span> <span data-ttu-id=\"7e1d7-105\">Chaînes max-100</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-105\">Max strings-100</span></span>\n    \n    GroupType: Group/ConnectGroup. ConnectGroup for Managed public group."
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://{endpoint-url}/v1/groups/{test-group-id}/subgroups'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: <span data-ttu-id="7e1d7-106">GUID associé au groupe donné</span><span class="sxs-lookup"><span data-stu-id="7e1d7-106">GUID associated with the given group</span></span>
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: name
+        in: body
+        isRequired: true
+        description: <span data-ttu-id="7e1d7-107">Nom de groupe</span><span class="sxs-lookup"><span data-stu-id="7e1d7-107">Group name</span></span>
+        types:
+          - uid: string
+      - name: welcomeMessage
+        in: body
+        isRequired: true
+        description: <span data-ttu-id="7e1d7-108">Message de bienvenue qui s’affiche à nouveau membre du groupe</span><span class="sxs-lookup"><span data-stu-id="7e1d7-108">Welcome message which will be displayed to new group member</span></span>
+        types:
+          - uid: string
+      - name: members
+        in: body
+        isRequired: true
+        description: "<span data-ttu-id=\"7e1d7-109\">Numéro de Mobile (avec le code du pays) des membres à ajouter.</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-109\">Mobile number(with country code) of members to be added.</span></span> <span data-ttu-id=\"7e1d7-110\">Valeur par défaut\_: Utilisateur du jeton d’accès sera ajouté en tant qu’administrateur du groupe</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-110\">Default: Access token's user will be added as admin of the group</span></span>"
+        types:
+          - uid: string
+            isArray: true
+      - name: groupType
+        in: body
+        isRequired: true
+        description: "<span data-ttu-id=\"7e1d7-111\">Enum\_: Groupe/ConnectGroup.</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-111\">Enum: Group/ConnectGroup.</span></span> <span data-ttu-id=\"7e1d7-112\">ConnectGroup créera un groupe Public gérés.</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-112\">ConnectGroup will create Managed Public group.</span></span> <span data-ttu-id=\"7e1d7-113\">Par défaut\_: groupe</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-113\">Default: Group</span></span>"
+        types:
+          - uid: string
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="7e1d7-114">Reçu à partir de la fin de l’authentification par jeton d’accès</span><span class="sxs-lookup"><span data-stu-id="7e1d7-114">Access Token received from the auth end-point</span></span>
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="7e1d7-115">application/json</span><span class="sxs-lookup"><span data-stu-id="7e1d7-115">application/json</span></span>
+    types:
+      - uid: string
+definitions:
+  - name: Request - Create a managed public group
+    description: <span data-ttu-id="7e1d7-116">Créer un groupe public géré</span><span class="sxs-lookup"><span data-stu-id="7e1d7-116">Create a managed public group</span></span>
+    kind: object
+    properties:
+      - name: name
+        description: <span data-ttu-id="7e1d7-117">Nom de groupe</span><span class="sxs-lookup"><span data-stu-id="7e1d7-117">Group name</span></span>
+        types:
+          - uid: string
+      - name: welcomeMessage
+        description: <span data-ttu-id="7e1d7-118">Message de bienvenue qui s’affiche à nouveau membre du groupe</span><span class="sxs-lookup"><span data-stu-id="7e1d7-118">Welcome message which will be displayed to new group member</span></span>
+        types:
+          - uid: string
+      - name: members
+        description: "<span data-ttu-id=\"7e1d7-119\">Numéro de Mobile (avec le code du pays) des membres à ajouter.</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-119\">Mobile number(with country code) of members to be added.</span></span> <span data-ttu-id=\"7e1d7-120\">Valeur par défaut\_: Utilisateur du jeton d’accès sera ajouté en tant qu’administrateur du groupe</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-120\">Default: Access token's user will be added as admin of the group</span></span>"
+        types:
+          - uid: string
+            isArray: true
+      - name: groupType
+        description: "<span data-ttu-id=\"7e1d7-121\">Enum\_: Groupe/ConnectGroup.</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-121\">Enum: Group/ConnectGroup.</span></span> <span data-ttu-id=\"7e1d7-122\">ConnectGroup créera un groupe Public gérés.</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-122\">ConnectGroup will create Managed Public group.</span></span> <span data-ttu-id=\"7e1d7-123\">Par défaut\_: groupe</span><span class=\"sxs-lookup\"><span data-stu-id=\"7e1d7-123\">Default: Group</span></span>"
+        types:
+          - uid: string
+examples: []
+security: []

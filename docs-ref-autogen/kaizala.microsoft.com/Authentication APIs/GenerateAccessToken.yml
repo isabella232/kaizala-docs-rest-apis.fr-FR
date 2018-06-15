@@ -1,0 +1,63 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generateaccesstoken
+name: Generate Access Token
+service: Kaizala
+groupName: Authentication APIs
+apiVersion: '1.0'
+summary: |-
+  <span data-ttu-id="47f5d-101">Récupérer le jeton d’accès</span><span class="sxs-lookup"><span data-stu-id="47f5d-101">Retrieve the access token</span></span>  
+  <span data-ttu-id="47f5d-102">Cette API génère le jeton d’accès pour accéder aux ressources de Kaizala, lorsque le jeton d’actualisation, Id de connecteur d’Application et le Secret de connecteur d’Application est fourni.</span><span class="sxs-lookup"><span data-stu-id="47f5d-102">This API generates Access token to access Kaizala resources, when refresh token, Application/Connector Id and Application/Connector Secret is provided</span></span>
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'GET https://api.kaiza.la/v1/accessToken'
+uriParameters: []
+responses:
+  - name: 200 OK
+    description: ''
+    types:
+      - uid: Response - Access Token
+requestHeader:
+  - name: applicationId
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="47f5d-103">ID associé au connecteur</span><span class="sxs-lookup"><span data-stu-id="47f5d-103">ID associated with the Connector</span></span>
+    types:
+      - uid: string
+  - name: applicationSecret
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="47f5d-104">Secret associé au connecteur</span><span class="sxs-lookup"><span data-stu-id="47f5d-104">Secret associated with the Connector</span></span>
+    types:
+      - uid: string
+  - name: refreshToken
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="47f5d-105">refreshToken partagée par l’administrateur de groupe Kaizala lorsque le connecteur respectif a été accordé l’accès au groupe</span><span class="sxs-lookup"><span data-stu-id="47f5d-105">refreshToken shared by the Kaizala Group Admin when the respective Connector was granted access to the group</span></span>
+    types:
+      - uid: string
+definitions:
+  - name: Response - Access Token
+    description: <span data-ttu-id="47f5d-106">Récupérer le jeton d’accès</span><span class="sxs-lookup"><span data-stu-id="47f5d-106">Retrieve the Access Token</span></span>
+    kind: object
+    properties:
+      - name: accessToken
+        description: <span data-ttu-id="47f5d-107">Reçu à partir de la fin de l’authentification par jeton d’accès</span><span class="sxs-lookup"><span data-stu-id="47f5d-107">Access Token received from the auth end-point</span></span>
+        types:
+          - uid: string
+      - name: endpointUrl
+        description: '<span data-ttu-id="47f5d-108">Authentification réussie, une url de point de terminaison est renvoyée qui doivent être utilisées comme url de base d’api pour effectuer des appels d’API suivants</span><span class="sxs-lookup"><span data-stu-id="47f5d-108">On successful auth, an endpoint url is returned that should be used as api-base-url for making subsequent API calls</span></span>'
+        types:
+          - uid: string
+      - name: accessTokenExpiry
+        description: <span data-ttu-id="47f5d-109">Il indique le délai d’expiration pour accessToken dans time(milliseconds) époque</span><span class="sxs-lookup"><span data-stu-id="47f5d-109">It indicates the expiry time for accessToken in epoch time(milliseconds)</span></span>
+        types:
+          - uid: integer
+      - name: scope
+        description: <span data-ttu-id="47f5d-110">Étendue des autorisations sur les ressources Kaizala offrant un accès jeton</span><span class="sxs-lookup"><span data-stu-id="47f5d-110">Scope of permissions on Kaizala resources that given Access Token provides</span></span>
+        types:
+          - uid: string
+examples: []
+security: []

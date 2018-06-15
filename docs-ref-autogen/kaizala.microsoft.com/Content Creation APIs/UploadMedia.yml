@@ -1,0 +1,29 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.uploadmedia
+name: Upload Media
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: '1.0'
+summary: |-
+  <span data-ttu-id="2ab75-101">Télécharger des fichiers multimédias</span><span class="sxs-lookup"><span data-stu-id="2ab75-101">Upload media</span></span>  
+  <span data-ttu-id="2ab75-102">Cette API télécharge multimédia (image, document, audio, album ou vidéo)</span><span class="sxs-lookup"><span data-stu-id="2ab75-102">This API uploads media (image, document, audio, album or video)</span></span>
+consumes:
+  - multipart/form-data
+produces:
+  - application/json
+paths:
+  - content: 'POST https://api.kaiza.la/v1/media'
+uriParameters: []
+responses:
+  - name: 200 OK
+    description: ''
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="2ab75-103">Reçu à partir de la fin de l’authentification par jeton d’accès</span><span class="sxs-lookup"><span data-stu-id="2ab75-103">Access Token received from the auth end-point</span></span>
+    types:
+      - uid: string
+definitions: []
+examples: []
+security: []

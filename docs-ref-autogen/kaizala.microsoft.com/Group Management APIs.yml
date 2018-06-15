@@ -1,0 +1,53 @@
+### YamlMime:RESTOperationGroup
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis
+name: Group Management APIs
+summary: <span data-ttu-id="a9b31-101">Ces API permettent admin(s) de groupe accéder aux ressources de groupe et de gérer les appartenances aux groupes en conséquence.</span><span class="sxs-lookup"><span data-stu-id="a9b31-101">These APIs allow group admin(s) to access group resources and manage group memberships accordingly.</span></span> <br />
+apiVersion: '1.0'
+service: Kaizala
+operations:
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addmembers
+    summary: |-
+      <span data-ttu-id="a9b31-102">Ajouter des membres à un groupe</span><span class="sxs-lookup"><span data-stu-id="a9b31-102">Add members to a group</span></span>  
+      <span data-ttu-id="a9b31-103">Cette API permet à l’ajout de membres à un groupe</span><span class="sxs-lookup"><span data-stu-id="a9b31-103">This API lets addition of members to a group</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubgroup
+    summary: |-
+      <span data-ttu-id="a9b31-104">Cette API permet d’ajouter vous permet de groupe comme un groupe vers un autre groupe secondaire</span><span class="sxs-lookup"><span data-stu-id="a9b31-104">This API allows lets addition of group as a sub-group to another group</span></span>  
+      <span data-ttu-id="a9b31-105">Ajouter le groupe comme un groupe secondaire à un autre groupe</span><span class="sxs-lookup"><span data-stu-id="a9b31-105">Add group as a sub-group to another group</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubscribers
+    summary: |-
+      <span data-ttu-id="a9b31-106">Ajouter les abonnés à un groupe public</span><span class="sxs-lookup"><span data-stu-id="a9b31-106">Add Subscribers to a public group</span></span>  
+      <span data-ttu-id="a9b31-107">Cette API ajoute les abonnés à un groupe public</span><span class="sxs-lookup"><span data-stu-id="a9b31-107">This API adds subscribers to a public group</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.creategroup
+    summary: "<span data-ttu-id=\"a9b31-108\">Créer un groupe</span><span class=\"sxs-lookup\"><span data-stu-id=\"a9b31-108\">Create a group</span></span>  \n<span data-ttu-id=\"a9b31-109\">Cette API permet de créer un un groupe, y compris des groupes publics gérées.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a9b31-109\">This API allows creation of a a group, including Managed Public Groups.</span></span> <span data-ttu-id=\"a9b31-110\">Il prend un tableau de chaînes comme entrée.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a9b31-110\">It takes array of string as input.</span></span> <span data-ttu-id=\"a9b31-111\">Chaque chaîne est le numéro de téléphone mobile (avec le code du pays).</span><span class=\"sxs-lookup\"><span data-stu-id=\"a9b31-111\">Each string is mobile number(with country code).</span></span> <span data-ttu-id=\"a9b31-112\">Cette API peut prendre au maximum 100 numéros de téléphone portable comme entrée.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a9b31-112\">This API can take maximum of 100 mobile numbers as input.</span></span>\n<span data-ttu-id=\"a9b31-113\">GroupType\_: Groupe/ConnectGroup.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a9b31-113\">GroupType: Group/ConnectGroup.</span></span> <span data-ttu-id=\"a9b31-114\">ConnectGroup pour le groupe public géré.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a9b31-114\">ConnectGroup for Managed public group.</span></span>"
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.createsubgroup
+    summary: "<span data-ttu-id=\"a9b31-115\">Créer un groupe sub</span><span class=\"sxs-lookup\"><span data-stu-id=\"a9b31-115\">Create a  sub group</span></span>  \n<span data-ttu-id=\"a9b31-116\">API pour créer un groupe.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a9b31-116\">API to create a group.</span></span>\n<span data-ttu-id=\"a9b31-117\">Paramètres facultatifs\_: membres\_: tableau de chaînes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a9b31-117\">Optional parameters: Members: string array.</span></span> <span data-ttu-id=\"a9b31-118\">Chaque chaîne est le numéro de téléphone mobile (avec le code du pays).</span><span class=\"sxs-lookup\"><span data-stu-id=\"a9b31-118\">Each string is mobile number(with country code).</span></span> <span data-ttu-id=\"a9b31-119\">Chaînes max-100</span><span class=\"sxs-lookup\"><span data-stu-id=\"a9b31-119\">Max strings-100</span></span>\n    \n    GroupType: Group/ConnectGroup. ConnectGroup for Managed public group."
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchdirectgroups
+    summary: |-
+      <span data-ttu-id="a9b31-120">Extraction des groupes directs</span><span class="sxs-lookup"><span data-stu-id="a9b31-120">Fetch direct groups</span></span>  
+      <span data-ttu-id="a9b31-121">Cette API retourne tous les groupes directes attachés à l’utilisateur</span><span class="sxs-lookup"><span data-stu-id="a9b31-121">This API returns all direct groups attached with the user</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchgroupdetails
+    summary: |-
+      <span data-ttu-id="a9b31-122">Extraction des détails de groupe</span><span class="sxs-lookup"><span data-stu-id="a9b31-122">Fetch group details</span></span>  
+      <span data-ttu-id="a9b31-123">Cette API peut être utilisée pour extraire les détails d’un groupe</span><span class="sxs-lookup"><span data-stu-id="a9b31-123">This API can be used to fetch details for a group</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchmembers
+    summary: |-
+      <span data-ttu-id="a9b31-124">Extraction des membres d’un groupe</span><span class="sxs-lookup"><span data-stu-id="a9b31-124">Fetch members of a group</span></span>  
+      <span data-ttu-id="a9b31-125">Cette API renvoie la liste des membres d’un groupe</span><span class="sxs-lookup"><span data-stu-id="a9b31-125">This API returns list of members in a group</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchsubgroup
+    summary: |-
+      <span data-ttu-id="a9b31-126">Cette API est utilisée pour extraire les sous-groupes d’un groupe</span><span class="sxs-lookup"><span data-stu-id="a9b31-126">This API is used to fetch sub-groups of a group</span></span>  
+       <span data-ttu-id="a9b31-127">Extraction des sous-groupes d’un groupe</span><span class="sxs-lookup"><span data-stu-id="a9b31-127">Fetch sub-groups of a group</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.getsubscribers
+    summary: |-
+      <span data-ttu-id="a9b31-128">Obtenir les abonnés à un groupe public</span><span class="sxs-lookup"><span data-stu-id="a9b31-128">Get Subscribers of a public group</span></span>  
+      <span data-ttu-id="a9b31-129">Cette API extrait la liste des abonnés à un groupe public géré</span><span class="sxs-lookup"><span data-stu-id="a9b31-129">This API fetches list of subscribers of a managed public group</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removegroupassubgroup
+    summary: <span data-ttu-id="a9b31-130">Supprimer le groupe comme un groupe vers un autre groupe secondaire</span><span class="sxs-lookup"><span data-stu-id="a9b31-130">Remove group as a sub-group to another group</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removemembers
+    summary: |-
+      <span data-ttu-id="a9b31-131">Supprimer des membres d’un groupe</span><span class="sxs-lookup"><span data-stu-id="a9b31-131">Remove members from a group</span></span>  
+      <span data-ttu-id="a9b31-132">Cette API permet à des suppressions de membres d’un groupe</span><span class="sxs-lookup"><span data-stu-id="a9b31-132">This API allows removals of members from a group</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removesubscribers
+    summary: |-
+      <span data-ttu-id="a9b31-133">Supprimer les abonnés à partir d’un groupe public</span><span class="sxs-lookup"><span data-stu-id="a9b31-133">Remove Subscribers from a public group</span></span>  
+      <span data-ttu-id="a9b31-134">Cette API permet à un utilisateur pour supprimer les abonnés à partir d’un groupe public</span><span class="sxs-lookup"><span data-stu-id="a9b31-134">This API lets a user to remove subscribers from a public group</span></span>

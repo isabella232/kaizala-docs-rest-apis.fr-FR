@@ -1,0 +1,19 @@
+### YamlMime:RESTOperationGroup
+uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis
+name: Authentication APIs
+summary: <span data-ttu-id="a436d-101">Ces API vous aider à l’accès pour les systèmes tiers 3e interagir avec une plateforme d’API Kaizala.</span><span class="sxs-lookup"><span data-stu-id="a436d-101">These APIs help in gaining access for 3rd party systems to interact with Kaizala API platform.</span></span> <span data-ttu-id="a436d-102">Kaizala implémente le mécanisme d’autorisation en fonction de jeton personnalisé.</span><span class="sxs-lookup"><span data-stu-id="a436d-102">Kaizala implements custom token based authorization mechanism.</span></span> <span data-ttu-id="a436d-103">Ce mécanisme utilise le concept d’actualisation et les jetons d’accès pour gérer les autorisations d’accès pour les API de plateforme Kaizala.</span><span class="sxs-lookup"><span data-stu-id="a436d-103">This mechanism uses the concept of Refresh and Access Tokens to manage access authorization for the Kaizala Platform APIs.</span></span> <span data-ttu-id="a436d-104">/n</span><span class="sxs-lookup"><span data-stu-id="a436d-104">/n</span></span>
+apiVersion: '1.0'
+service: Kaizala
+operations:
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generateaccesstoken
+    summary: |-
+      <span data-ttu-id="a436d-105">Récupérer le jeton d’accès</span><span class="sxs-lookup"><span data-stu-id="a436d-105">Retrieve the access token</span></span>  
+      <span data-ttu-id="a436d-106">Cette API génère le jeton d’accès pour accéder aux ressources de Kaizala, lorsque le jeton d’actualisation, Id de connecteur d’Application et le Secret de connecteur d’Application est fourni.</span><span class="sxs-lookup"><span data-stu-id="a436d-106">This API generates Access token to access Kaizala resources, when refresh token, Application/Connector Id and Application/Connector Secret is provided</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generatepin
+    summary: |-
+      <span data-ttu-id="a436d-107">Générer du code confidentiel unique</span><span class="sxs-lookup"><span data-stu-id="a436d-107">Generate One-Time PIN</span></span>  
+      <span data-ttu-id="a436d-108">Cette API génère le code confidentiel unique pour un numéro de téléphone mobile, lors de l’Id de connecteur d’Application est fourni.</span><span class="sxs-lookup"><span data-stu-id="a436d-108">This API generates One-time PIN for a mobile number, when Application/Connector Id is provided.</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.getrefreshtoken
+    summary: |-
+      <span data-ttu-id="a436d-109">Connectez-vous à l’aide de code confidentiel et obtenir le jeton actualisation applicationId</span><span class="sxs-lookup"><span data-stu-id="a436d-109">Login with pin and applicationId to get refresh token</span></span>  
+      <span data-ttu-id="a436d-110">Cette API génère le jeton d’actualisation pour l’Id de connecteur d’Application donné, lorsque le code confidentiel, numéro de téléphone mobile et Id de connecteur d’Application est fourni.</span><span class="sxs-lookup"><span data-stu-id="a436d-110">This API generates refresh token for the given Application/Connector Id, when pin, mobile number & Application/Connector Id is provided.</span></span>

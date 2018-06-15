@@ -1,0 +1,67 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.getsubscribers
+name: Get Subscribers
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: '1.0'
+summary: |-
+  <span data-ttu-id="2eccc-101">Obtenir les abonnés à un groupe public</span><span class="sxs-lookup"><span data-stu-id="2eccc-101">Get Subscribers of a public group</span></span>  
+  <span data-ttu-id="2eccc-102">Cette API extrait la liste des abonnés à un groupe public géré</span><span class="sxs-lookup"><span data-stu-id="2eccc-102">This API fetches list of subscribers of a managed public group</span></span>
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://{endpoint-url}/v1/groups/{test-public-group-id}/subscribers'
+uriParameters:
+  - name: test-public-group-id
+    in: path
+    isRequired: true
+    description: ''
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: count
+        in: body
+        isRequired: true
+        description: <span data-ttu-id="2eccc-103">Nombre d’abonnés dans le groupe Public</span><span class="sxs-lookup"><span data-stu-id="2eccc-103">Number of Subscribers in the Public Group</span></span>
+        types:
+          - uid: integer
+      - name: cursor
+        in: body
+        isRequired: true
+        description: <span data-ttu-id="2eccc-104">Début du jeu de résultats.</span><span class="sxs-lookup"><span data-stu-id="2eccc-104">Start of resultset.</span></span> <span data-ttu-id="2eccc-105">Pour la pagination.</span><span class="sxs-lookup"><span data-stu-id="2eccc-105">For pagination.</span></span> <span data-ttu-id="2eccc-106">Pour être utilisé dans le corps de la requête pour extraire le résultat suivant défini.</span><span class="sxs-lookup"><span data-stu-id="2eccc-106">To be used in Request body for fetching next result set.</span></span> <span data-ttu-id="2eccc-107">Présenter en réponse uniquement s’il existe un jeu de résultats valide suivant.</span><span class="sxs-lookup"><span data-stu-id="2eccc-107">Present in response only if there is a valid next result set.</span></span>
+        types:
+          - uid: string
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="2eccc-108">Reçu à partir de la fin de l’authentification par jeton d’accès</span><span class="sxs-lookup"><span data-stu-id="2eccc-108">Access Token received from the auth end-point</span></span>
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="2eccc-109">application/json</span><span class="sxs-lookup"><span data-stu-id="2eccc-109">application/json</span></span>
+    types:
+      - uid: string
+definitions:
+  - name: Request - Subscribers of a public group
+    description: <span data-ttu-id="2eccc-110">Obtenir les abonnés à un groupe public</span><span class="sxs-lookup"><span data-stu-id="2eccc-110">Get Subscribers of a public group</span></span>
+    kind: object
+    properties:
+      - name: count
+        description: <span data-ttu-id="2eccc-111">Nombre d’abonnés dans le groupe Public</span><span class="sxs-lookup"><span data-stu-id="2eccc-111">Number of Subscribers in the Public Group</span></span>
+        types:
+          - uid: integer
+      - name: cursor
+        description: <span data-ttu-id="2eccc-112">Début du jeu de résultats.</span><span class="sxs-lookup"><span data-stu-id="2eccc-112">Start of resultset.</span></span> <span data-ttu-id="2eccc-113">Pour la pagination.</span><span class="sxs-lookup"><span data-stu-id="2eccc-113">For pagination.</span></span> <span data-ttu-id="2eccc-114">Pour être utilisé dans le corps de la requête pour extraire le résultat suivant défini.</span><span class="sxs-lookup"><span data-stu-id="2eccc-114">To be used in Request body for fetching next result set.</span></span> <span data-ttu-id="2eccc-115">Présenter en réponse uniquement s’il existe un jeu de résultats valide suivant.</span><span class="sxs-lookup"><span data-stu-id="2eccc-115">Present in response only if there is a valid next result set.</span></span>
+        types:
+          - uid: string
+examples: []
+security: []
