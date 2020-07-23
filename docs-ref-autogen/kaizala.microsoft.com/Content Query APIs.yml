@@ -1,13 +1,18 @@
 ### YamlMime:RESTOperationGroup
 uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis
 name: Content Query APIs
-summary: 'Cet ensemble d’API extraire la liste des instances de l’action envoyé à un groupe <Table>  <tr><th> Action </th> <th>OBTENIR la prise en charge </th><th> ID </th></tr> <tr><td> Image des pièces jointes </td> <td> Oui </td> <td>  image  </td></tr> <tr><td> Pièce jointe audio </td> <td> Non </td> <td>  audio  </td></tr> <tr><td> Pièce jointe </td> <td> Oui </td>  <td>  document  </td></tr> <tr><td> Pièce jointe de contact </td> <td> Non </td> <td>  N/A  </td></tr> <tr><td> Travail </td> <td> Oui </td>  <td>  Travail  </td></tr> <tr><td> Enquête </td> <td> Oui </td> <td>  enquête  </td></tr> <tr><td> Photo avec l’emplacement </td> <td> Oui </td> <td>  photoWithLocation  </td></tr> <tr><td> Rendez-vous </td> <td> Oui </td> <td>  LetsMeet  </td></tr> <tr><td> Interrogation rapide </td> <td> Oui </td> <td>  Sondage  </td></tr> <tr><td> Emplacement de partage </td> <td> Oui </td> <td>  shareLocation  </td></tr> <tr><td> Emplacement de la demande </td> <td> Non </td> <td>  N/A  </td></tr> <tr><td> Emplacement Live </td> <td> Non </td> <td>  N/A  </td></tr> <tr><td> Annonce </td> <td> Non </td> <td>  Annonce  </td></tr> </Table>   '
-apiVersion: '1.0'
+summary: 'Ces API récupèrent la liste des instances d’action envoyées à un groupe. <Table>  <tr><th> Action </th> <th>OBTENIR la prise en charge </th><th> ID </th></tr> <tr><td> Image jointe </td> <td> Oui </td> <td>  image  </td></tr> <tr><td> Pièce jointe audio </td> <td> Non </td> <td>  audio  </td></tr> <tr><td> Pièce jointe de document </td> <td> Oui </td>  <td>  document  </td></tr> <tr><td> Pièce jointe de contact </td> <td> Non </td> <td>  N/D  </td></tr> <tr><td> Travail </td> <td> Oui </td>  <td>  Travail  </td></tr> <tr><td> Enquête </td> <td> Oui </td> <td>  sondages  </td></tr> <tr><td> Photo avec emplacement </td> <td> Oui </td> <td>  photoWithLocation  </td></tr> <tr><td> Nous allons respecter </td> <td> Oui </td> <td>  LetsMeet  </td></tr> <tr><td> Sondage rapide </td> <td> Oui </td> <td>  Temporisateur  </td></tr> <tr><td> Emplacement de partage </td> <td> Oui </td> <td>  shareLocation  </td></tr> <tr><td> Emplacement de la demande </td> <td> Non </td> <td>  N/D  </td></tr> <tr><td> Emplacement en direct </td> <td> Non </td> <td>  N/D  </td></tr> <tr><td> Annonce </td> <td> Non </td> <td>  Annonce  </td></tr> </Table>   '
+apiVersion: "1.0"
 service: Kaizala
 operations:
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis.fetchingsurveyresponses
-    summary: |-
-      Extraction des réponses de l’enquête  
-      Cette API permet d’extraire des réponses à une enquête
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis.fetchjobs
-    summary: Extraction des travaux dans un groupe
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis.fetchingsurveyresponses
+  summary: "Extraction des réponses d’enquête  \nCette API vous permet d’extraire des réponses à une enquête."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis.fetchjobs
+  summary: Récupérer des travaux dans un groupe
+metadata:
+  ms.openlocfilehash: a437478e056bcc393080c0235ddab87ed6d61bb8
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384187"

@@ -3,96 +3,105 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.creategroup
 name: Create Group
 service: Kaizala
 groupName: Group Management APIs
-apiVersion: '1.0'
-summary: "Créer un groupe  \nCette API permet de créer un un groupe, y compris des groupes publics gérées. Il prend un tableau de chaînes comme entrée. Chaque chaîne est le numéro de téléphone mobile (avec le code du pays). Cette API peut prendre au maximum 100 numéros de téléphone portable comme entrée.\nGroupType\_: Groupe/ConnectGroup. ConnectGroup pour le groupe public géré."
+apiVersion: "1.0"
+summary: "Créer un groupe  \nCette API permet de créer un groupe, y compris les groupes publics gérés. Il prend un tableau de chaîne comme entrée. Chaque chaîne est numéro de téléphone mobile (avec code pays). Cette API peut prendre jusqu’à 100 numéros de téléphone mobile en entrée.\nGroupType : Group/ConnectGroup. ConnectGroup pour le groupe public géré."
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'POST https://{endpoint-url}/v1/groups'
+- content: POST https://{endpoint-url}/v1/groups
 uriParameters: []
 responses:
-  - name: 200 OK
-    description: ''
-    types:
-      - uid: Response - Create a group
+- name: 200 OK
+  description: ''
+  types:
+  - uid: Response - Create a group
 requestBody:
-  - parameters:
-      - name: name
-        in: body
-        isRequired: true
-        description: Nom de groupe
-        types:
-          - uid: string
-      - name: welcomeMessage
-        in: body
-        isRequired: true
-        description: Message de bienvenue qui s’affiche à nouveau membre du groupe
-        types:
-          - uid: string
-      - name: members
-        in: body
-        isRequired: true
-        description: "Numéro de Mobile (avec le code du pays) des membres à ajouter. Valeur par défaut\_: Utilisateur du jeton d’accès sera ajouté en tant qu’administrateur du groupe"
-        types:
-          - uid: string
-            isArray: true
-      - name: groupType
-        in: body
-        isRequired: true
-        description: "Enum\_: Groupe/ConnectGroup. ConnectGroup créera un groupe Public gérés. Par défaut\_: groupe"
-        types:
-          - uid: string
+- name: default
+  parameters:
+  - name: name
+    in: body
+    isRequired: true
+    description: Nom du groupe
+    types:
+    - uid: string
+  - name: welcomeMessage
+    in: body
+    isRequired: true
+    description: Message d’accueil qui sera affiché dans le nouveau membre de groupe
+    types:
+    - uid: string
+  - name: members
+    in: body
+    isRequired: true
+    description: 'Numéro de téléphone mobile (avec code de pays) des membres à ajouter. Valeur par défaut : l’utilisateur du jeton d’accès est ajouté en tant qu’administrateur du groupe.'
+    types:
+    - uid: string
+      isArray: true
+  - name: groupType
+    in: body
+    isRequired: true
+    description: 'Énumération : Group/ConnectGroup. ConnectGroup crée un groupe public géré. Valeur par défaut : groupe'
+    types:
+    - uid: string
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: 'Reçu à partir de la fin de l’authentification par jeton d’accès '
-    types:
-      - uid: string
-  - name: Content-Type
-    in: header
-    isRequired: true
-    description: application/json
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: 'Jeton d’accès reçu depuis le point de terminaison auth '
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
 definitions:
-  - name: Response - Create a group
-    kind: object
-    properties:
-      - name: groupId
-        description: 'Identificateur de groupe qui peut être utilisé dans les appels d’API suivants '
-        types:
-          - uid: string
-      - name: groupName
-        description: Nom de groupe
-        types:
-          - uid: string
-      - name: membersAdded
-        description: 'True si tous les membres sont bien ajoutés '
-        types:
-          - uid: boolean
-  - name: Request - Create a managed public group
-    description: Créer un groupe public géré
-    kind: object
-    properties:
-      - name: name
-        description: Nom de groupe
-        types:
-          - uid: string
-      - name: welcomeMessage
-        description: Message de bienvenue qui s’affiche à nouveau membre du groupe
-        types:
-          - uid: string
-      - name: members
-        description: "Numéro de Mobile (avec le code du pays) des membres à ajouter. Valeur par défaut\_: Utilisateur du jeton d’accès sera ajouté en tant qu’administrateur du groupe"
-        types:
-          - uid: string
-            isArray: true
-      - name: groupType
-        description: "Enum\_: Groupe/ConnectGroup. ConnectGroup créera un groupe Public gérés. Par défaut\_: groupe"
-        types:
-          - uid: string
+- name: Response - Create a group
+  kind: object
+  properties:
+  - name: groupId
+    description: 'Identificateur de groupe qui peut être utilisé dans les appels d’API suivants '
+    types:
+    - uid: string
+  - name: groupName
+    description: Nom du groupe
+    types:
+    - uid: string
+  - name: membersAdded
+    description: 'True si tous les membres sont ajoutés avec succès '
+    types:
+    - uid: boolean
+- name: Request - Create a managed public group
+  description: Créer un groupe public géré
+  kind: object
+  properties:
+  - name: name
+    description: Nom du groupe
+    types:
+    - uid: string
+  - name: welcomeMessage
+    description: Message d’accueil qui sera affiché dans le nouveau membre de groupe
+    types:
+    - uid: string
+  - name: members
+    description: 'Numéro de téléphone mobile (avec code de pays) des membres à ajouter. Valeur par défaut : l’utilisateur du jeton d’accès est ajouté en tant qu’administrateur du groupe.'
+    types:
+    - uid: string
+      isArray: true
+  - name: groupType
+    description: 'Énumération : Group/ConnectGroup. ConnectGroup crée un groupe public géré. Valeur par défaut : groupe'
+    types:
+    - uid: string
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: bd71c3310b4edf67794b8b74052af6e088914570
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384199"

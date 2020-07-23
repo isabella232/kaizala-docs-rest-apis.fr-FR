@@ -3,57 +3,64 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addmembers
 name: Add Members
 service: Kaizala
 groupName: Group Management APIs
-apiVersion: '1.0'
-summary: |-
-  Ajouter des membres à un groupe  
-  Cette API permet à l’ajout de membres à un groupe
+apiVersion: "1.0"
+summary: "Ajouter des membres à un groupe  \nCette API permet d’ajouter des membres à un groupe"
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'PUT https://{endpoint-url}/v1/groups/{test-group-id}/members'
+- content: PUT https://{endpoint-url}/v1/groups/{test-group-id}/members
 uriParameters:
-  - name: test-group-id
-    in: path
-    isRequired: true
-    description: GUID associé au groupe donné
-    types:
-      - uid: string
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID associé au groupe donné
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestBody:
-  - parameters:
-      - name: members
-        in: body
-        isRequired: true
-        description: Tableau des numéros de téléphone (avec countrycode) de nouveaux membres à ajouter
-        types:
-          - uid: string
-            isArray: true
+- name: default
+  parameters:
+  - name: members
+    in: body
+    isRequired: true
+    description: Tableau de numéros de téléphone (avec CountryCode) de nouveaux membres à ajouter
+    types:
+    - uid: string
+      isArray: true
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: Reçu à partir de la fin de l’authentification par jeton d’accès
-    types:
-      - uid: string
-  - name: Content-Type
-    in: header
-    isRequired: true
-    description: application/json
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Jeton d’accès reçu depuis le point de terminaison auth
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
 definitions:
-  - name: Request - Add members to a group
-    description: Ajouter des membres à un groupe
-    kind: object
-    properties:
-      - name: members
-        description: Tableau des numéros de téléphone (avec countrycode) de nouveaux membres à ajouter
-        types:
-          - uid: string
-            isArray: true
+- name: Request - Add members to a group
+  description: Ajouter des membres à un groupe
+  kind: object
+  properties:
+  - name: members
+    description: Tableau de numéros de téléphone (avec CountryCode) de nouveaux membres à ajouter
+    types:
+    - uid: string
+      isArray: true
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: 6324bb45538ee2c40aea5cdaf9013494e0197a75
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384197"

@@ -3,116 +3,122 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchsubgroup
 name: Fetch Subgroup
 service: Kaizala
 groupName: Group Management APIs
-apiVersion: '1.0'
-summary: |-
-  Cette API est utilisée pour extraire les sous-groupes d’un groupe  
-   Extraction des sous-groupes d’un groupe
+apiVersion: "1.0"
+summary: "Cette API est utilisée pour extraire des sous-groupes d’un groupe  \n Extraire des sous-groupes d’un groupe"
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'GET https://{endpoint-url}/v1/groups/{test-group-id}/subGroups'
+- content: GET https://{endpoint-url}/v1/groups/{test-group-id}/subGroups
 uriParameters:
-  - name: test-group-id
-    in: path
-    isRequired: true
-    description: GUID associé au groupe donné
-    types:
-      - uid: string
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID associé au groupe donné
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
-    types:
-      - uid: Response - Fetch subGroup of a group
+- name: 200 OK
+  description: ''
+  types:
+  - uid: Response - Fetch subGroup of a group
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: Reçu à partir de la fin de l’authentification par jeton d’accès
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Jeton d’accès reçu depuis le point de terminaison auth
+  types:
+  - uid: string
 definitions:
-  - name: Response - Fetch subGroup of a group
-    description: Sub-group(s) d’extraction d’un groupe
-    kind: object
-    properties:
-      - name: groupName
-        description: Nom du groupe
-        types:
-          - uid: string
-      - name: groupId
-        description: GUID associé au groupe
-        types:
-          - uid: string
-      - name: groupImageUrl
-        description: 'Chaîne spécifiant l’URL de l’image de profil de groupe '
-        types:
-          - uid: string
-      - name: hasSubGroups
-        description: 'Renvoie la valeur true, si le groupe a des sous-groupes'
-        types:
-          - uid: boolean
-      - name: hasParentGroups
-        description: 'Renvoie la valeur true, si le groupe possède les groupes parents'
-        types:
-          - uid: boolean
-      - name: isMappedToTenant
-        description: 'Renvoie la valeur true, si le groupe est mappé en tant que groupe d’organisation'
-        types:
-          - uid: boolean
-      - name: groupType
-        description: Groupe / connecter le groupe. Groupe Connect fait référence au groupe Public gérés.
-        types:
-          - uid: string
-      - name: subGroups
-        description: Tableau des sous-groupes qu’en fonction de groupe a
-        types:
-          - uid: SubGroup
-            isArray: true
-      - name: welcomeMessage
-        description: Bienvenue dans le Message qui s’affiche à nouveau joinees dans le groupe
-        types:
-          - uid: string
-  - name: SubGroup
-    description: Sous-groupe
-    kind: object
-    properties:
-      - name: groupName
-        description: Nom du groupe
-        types:
-          - uid: string
-      - name: groupId
-        description: GUID associé au groupe
-        types:
-          - uid: string
-      - name: groupImageUrl
-        description: 'Chaîne spécifiant l’URL de l’image de profil de groupe '
-        types:
-          - uid: string
-      - name: hasSubGroups
-        description: 'Renvoie la valeur true, si le groupe a des sous-groupes'
-        types:
-          - uid: boolean
-      - name: hasParentGroups
-        description: 'Renvoie la valeur true, si le groupe possède les groupes parents'
-        types:
-          - uid: boolean
-      - name: isMappedToTenant
-        description: 'Renvoie la valeur true, si le groupe est mappé en tant que groupe d’organisation'
-        types:
-          - uid: boolean
-      - name: groupType
-        description: Groupe / connecter le groupe. Groupe Connect fait référence au groupe Public gérés.
-        types:
-          - uid: string
-      - name: isDuplicate
-        description: 'Renvoie la valeur true, s’il est fourni groupid existe déjà'
-        types:
-          - uid: boolean
-      - name: welcomeMessage
-        description: 'Bienvenue dans le Message qui s’affiche à nouveau joinees dans le groupe '
-        types:
-          - uid: string
+- name: Response - Fetch subGroup of a group
+  description: Extraire les sous-groupes d’un groupe
+  kind: object
+  properties:
+  - name: groupName
+    description: Nom du groupe
+    types:
+    - uid: string
+  - name: groupId
+    description: GUID associé au groupe
+    types:
+    - uid: string
+  - name: groupImageUrl
+    description: 'Chaîne spécifiant l’URL de l’image de profil de groupe '
+    types:
+    - uid: string
+  - name: hasSubGroups
+    description: Renvoie la valeur true si le groupe possède des sous-groupes
+    types:
+    - uid: boolean
+  - name: hasParentGroups
+    description: Renvoie la valeur true si le groupe a des groupes parents
+    types:
+    - uid: boolean
+  - name: isMappedToTenant
+    description: Renvoie la valeur true si le groupe est mappé en tant que groupe d’organisation
+    types:
+    - uid: boolean
+  - name: groupType
+    description: Groupe/connecter un groupe. Connecter un groupe fait référence à un groupe public géré.
+    types:
+    - uid: string
+  - name: subGroups
+    description: Tableau de sous-groupes ayant donné le groupe
+    types:
+    - uid: SubGroup
+      isArray: true
+  - name: welcomeMessage
+    description: Message de bienvenue affiché pour les nouveaux affiliés dans le groupe
+    types:
+    - uid: string
+- name: SubGroup
+  description: Sous-groupe
+  kind: object
+  properties:
+  - name: groupName
+    description: Nom du groupe
+    types:
+    - uid: string
+  - name: groupId
+    description: GUID associé au groupe
+    types:
+    - uid: string
+  - name: groupImageUrl
+    description: 'Chaîne spécifiant l’URL de l’image de profil de groupe '
+    types:
+    - uid: string
+  - name: hasSubGroups
+    description: Renvoie la valeur true si le groupe possède des sous-groupes
+    types:
+    - uid: boolean
+  - name: hasParentGroups
+    description: Renvoie la valeur true si le groupe a des groupes parents
+    types:
+    - uid: boolean
+  - name: isMappedToTenant
+    description: Renvoie la valeur true si le groupe est mappé en tant que groupe d’organisation
+    types:
+    - uid: boolean
+  - name: groupType
+    description: Groupe/connecter un groupe. Connecter un groupe fait référence à un groupe public géré.
+    types:
+    - uid: string
+  - name: isDuplicate
+    description: Renvoie la valeur true si le GroupID fourni existe déjà
+    types:
+    - uid: boolean
+  - name: welcomeMessage
+    description: 'Message de bienvenue affiché pour les nouveaux affiliés dans le groupe '
+    types:
+    - uid: string
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: bedf21948fbea67cca19aef14ad76f6472dee98d
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384213"

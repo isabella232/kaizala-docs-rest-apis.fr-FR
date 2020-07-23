@@ -1,6 +1,6 @@
 ---
-title: API REST de Kaizala | MicrosoftDocs
-description: Cette rubrique fournit le contenu de référence API REST pour l’API Kaizala.
+title: API REST Kaizala | MicrosoftDocs
+description: Cette rubrique fournit du contenu de référence d’API REST pour l’API Kaizala.
 ms.date: 05-10-2017
 ms.service: kaizala
 ms.topic: conceptual
@@ -9,45 +9,45 @@ ms.author: ''
 manager: ''
 ms.devlang: https
 ms.openlocfilehash: 732aae562aaf823798066952a40526e353072efc
-ms.sourcegitcommit: a9df86259a9029a137346752ff43e135e2db6d14
+ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2018
-ms.locfileid: "19907234"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "45384229"
 ---
-# <a name="kaizala-rest-api"></a>API REST de Kaizala
+# <a name="kaizala-rest-api"></a>API REST Kaizala
 
-Kaizala permet aux développeurs tiers 3e Kaizala intégrer leurs processus d’entreprise en fournissant des appels d’API en fonction de la capacité à exécuter un ensemble d’actions curated dans Kaizala à l’aide de REST. L’étendue de l’API est pour les systèmes externes pour le point de terminaison d’appel et effectuer des actions sur la demande. Autrement dit, il s’agit d’un modèle de collecte – où les points de terminaison individuels doivent être appelée pour effectuer des actions spécifiques à l’aide de Kaizala APIs. Le modèle PUSH où plateforme Kaizala peut déclencher des actions permettre être configuré à l’aide de webhooks.
+Kaizala permet aux développeurs tiers d’intégrer Kaizala à leurs processus métier en offrant la possibilité d’effectuer un ensemble d’actions organisée dans Kaizala à l’aide d’appels d’API basés sur REST. L’étendue de l’API est destinée aux systèmes externes pour appeler le point de terminaison et effectuer des actions à la demande. Autrement dit, il s’agit d’un modèle d’extraction, où les points de terminaison individuels doivent être appelés pour effectuer des actions spécifiques à l’aide des API Kaizala. Le modèle poussé dans lequel la plateforme Kaizala peut déclencher des actions peut être configuré à l’aide des webhooks.
 
-## <a name="rest-operations"></a>Opérations de REST
+## <a name="rest-operations"></a>Opérations REST
 
 | Opération | Description                                                        |
 |-----------------|--------------------------------------------------------------------|
-| Générer du code confidentiel | Génère le code confidentiel unique pour un numéro de téléphone mobile, lors de l’Id de connecteur d’Application est fourni |
-| Obtenir le jeton actualisation | Génère le jeton d’actualisation pour l’Id de connecteur d’Application donné, lorsque le code confidentiel, numéro de téléphone mobile et Id de connecteur d’Application est fourni |
-| Générer un jeton d’accès | Génère le jeton d’accès pour accéder aux ressources de Kaizala, lorsque le jeton d’actualisation, Id de connecteur d’Application et le Secret de connecteur d’Application est fourni. |
-| Créer le groupe | Permet de créer un un groupe, y compris des groupes publics gérées. Il prend un tableau de chaînes comme entrée. Chaque chaîne est le numéro de téléphone mobile (avec le code du pays). Cette API peut prendre au maximum 100 numéros de téléphone portable en tant que input.\n\tGroupType : groupe/ConnectGroup. ConnectGroup pour le groupe public géré. |
-| Créer le groupe secondaire | Créer un groupe sub  |
+| Générer un code confidentiel | Génère un code confidentiel à usage unique pour un numéro de téléphone mobile, lorsque l’ID de l’application/connecteur est fourni |
+| Obtenir un jeton d’actualisation | Génère un jeton d’actualisation pour l’ID d’application/connecteur donné, lorsque le code confidentiel, le numéro de téléphone mobile & l’ID d’application/connecteur est fourni |
+| Générer un jeton d’accès | Génère un jeton d’accès pour accéder aux ressources Kaizala, lorsque le jeton d’actualisation, l’ID d’application/connecteur et la clé secrète application/connecteur sont fournis |
+| Créer un groupe | Permet la création d’un groupe, y compris les groupes publics gérés. Il prend un tableau de chaîne comme entrée. Chaque chaîne est numéro de téléphone mobile (avec code pays). Cette API peut prendre jusqu’à 100 numéros de téléphone mobile en tant qu’entrée. \ n \ tGroupType : Group/ConnectGroup. ConnectGroup pour le groupe public géré. |
+| Créer un sous-groupe | Créer un sous-groupe  |
 | Ajouter des membres | Ajouter des membres à un groupe |
-| Ajouter sous-groupe | Ajouter le groupe comme un groupe secondaire à un autre groupe |
-| Ajoutez des abonnés | Ajouter les abonnés à un groupe public |
-| Détails de l’extraction d’un groupe | Extraction des détails pour un groupe |
-| Extraction des membres | Renvoie la liste des membres d’un groupe |
-| Extraction d’abonnés | extrait la liste des abonnés à un groupe public géré |
-| Groupe secondaire d’extraction | Extraction des sous-groupes d’un groupe |
-| Supprimer un groupe en tant que groupe secondaire | Supprimer le groupe comme un groupe vers un autre groupe secondaire |
-| Supprimer des membres | Supprime des membres d’un groupe |
-| Supprimer les abonnés | Supprimer les abonnés à partir d’un groupe public géré |
-| Extraction des groupes Direct | Renvoie tous les groupes directes attachés à l’utilisateur |
-| Envoyer le Message | Envoyer un message sur un groupe |
-| Envoyer un Message à un abonné | Envoyer un message aux abonnés dans un groupe public |
-| Télécharger des fichiers multimédias | Téléchargements multimédia (image, document, audio, album ou vidéo) |
-| Envoyer le sondage | Vous permet de créer une enquête et envoyer un groupe |
-| Publier une Action personnalisée pour un abonné | Publier une action personnalisée pour les abonnés dans un groupe public |
-| Réponse à une Action | Publier une réponse à une action |
-| Réponse à une enquête. | Publier une réponse à une enquête |
-| Extraction des travaux | Extraction des travaux dans un groupe |
-| Extraction des réponses de l’enquête | Extraction des réponses à une enquête |
-| Obtenir tous les Webhooks | Renvoie tous les webhooks sur un groupe |
+| Ajouter un sous-groupe | Ajouter un groupe en tant que sous-groupe à un autre groupe |
+| Ajouter des abonnés | Ajouter des abonnés à un groupe public |
+| Extraire les détails du groupe | Extraire les détails d’un groupe |
+| Extraire les membres | Renvoie la liste des membres d’un groupe |
+| Extraire les abonnés | Récupère la liste des abonnés d’un groupe public géré |
+| Extraire un sous-groupe | Extraire des sous-groupes d’un groupe |
+| Supprimer un groupe en tant que sous-groupe | Supprimer un groupe en tant que sous-groupe d’un autre groupe |
+| Supprimer des membres | Supprime les membres d’un groupe |
+| Supprimer des abonnés | Supprimer des abonnés d’un groupe public géré |
+| Extraire les groupes directs | Renvoie tous les groupes directs associés à l’utilisateur |
+| Envoyer un message | Envoyer un message sur un groupe |
+| Envoyer un message à un abonné | Envoyer un message à un ou plusieurs abonnés d’un groupe public |
+| Télécharger du contenu multimédia | Télécharge le support (image, document, audio, album ou vidéo) |
+| Envoyer un sondage | Vous permet de créer une enquête et de l’envoyer sur un groupe |
+| Publier une action personnalisée sur un abonné | Publier une action personnalisée sur un ou plusieurs abonnés d’un groupe public |
+| Publier une réponse à une action | Publier une réponse à une action |
+| Publier une réponse à une enquête | Publier une réponse à une enquête |
+| Récupérer des travaux | Récupérer des travaux dans un groupe |
+| Extraire les réponses d’enquête | Extraire des réponses pour une enquête |
+| Obtenir tous les webhooks | renvoie tous les webhooks d’un groupe |
 | S’abonner à tous les événements | S’abonner à tous les événements au niveau de l’action |
-| Annuler l’abonnement une Webhook | Annulation d’un webhook |
+| Annuler l’abonnement à un webhook | Résiliation d’un webhook |

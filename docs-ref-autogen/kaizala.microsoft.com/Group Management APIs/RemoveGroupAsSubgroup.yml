@@ -3,37 +3,45 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removegroupassubg
 name: Remove Group As Subgroup
 service: Kaizala
 groupName: Group Management APIs
-apiVersion: '1.0'
-summary: Supprimer le groupe comme un groupe vers un autre groupe secondaire
+apiVersion: "1.0"
+summary: Supprimer un groupe en tant que sous-groupe d’un autre groupe
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'DELETE https://{endpoint-url}/v1/groups/{test-group-id}/subGroups/{test-sub-group-id}'
+- content: DELETE https://{endpoint-url}/v1/groups/{test-group-id}/subGroups/{test-sub-group-id}
 uriParameters:
-  - name: test-group-id
-    in: path
-    isRequired: true
-    description: GUID associé au groupe donné
-    types:
-      - uid: string
-  - name: test-sub-group-id
-    in: path
-    isRequired: true
-    description: ''
-    types:
-      - uid: string
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID associé au groupe donné
+  types:
+  - uid: string
+- name: test-sub-group-id
+  in: path
+  isRequired: true
+  description: ''
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: Reçu à partir de la fin de l’authentification par jeton d’accès
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Jeton d’accès reçu depuis le point de terminaison auth
+  types:
+  - uid: string
 definitions: []
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: d09e67af5fb4a65765b0259ca90fb6c674fcdd77
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384209"

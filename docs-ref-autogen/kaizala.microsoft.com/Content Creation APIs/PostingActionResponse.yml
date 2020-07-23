@@ -3,103 +3,106 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingactionresp
 name: Posting Action Response
 service: Kaizala
 groupName: Content Creation APIs
-apiVersion: '1.0'
-summary: |-
-  Publier une réponse à une action  
-  Cette API vous permet de valider une réponse à une Action
+apiVersion: "1.0"
+summary: "Publication d’une réponse à une action  \nCette API vous permet de publier une réponse à une action."
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'POST https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-action-id}/responses'
+- content: POST https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-action-id}/responses
 uriParameters:
-  - name: test-group-id
-    in: path
-    isRequired: true
-    description: GUID associé au groupe donné
-    types:
-      - uid: string
-  - name: test-action-id
-    in: path
-    isRequired: true
-    description: GUID associé en fonction de l’Action
-    types:
-      - uid: string
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID associé au groupe donné
+  types:
+  - uid: string
+- name: test-action-id
+  in: path
+  isRequired: true
+  description: GUID associé à l’action donnée
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestBody:
-  - parameters:
-      - name: id
-        in: body
-        isRequired: true
-        description: ID associé à l’Instance de l’Action
-        types:
-          - uid: string
-      - name: actionBody
-        in: body
-        isRequired: true
-        description: |-
-          Corps d’action  
-          Objet représentant les données nécessaires pour l’Action respectif. Paramètres seraient varient en fonction de différents de type d’Action.
-        types:
-          - uid: Request - Action Body
-      - name: responseId
-        in: body
-        description: Pour mettre à jour la réponse existante
-        types:
-          - uid: string
-      - name: actionType
-        in: body
-        isRequired: true
-        description: "Valeurs d’énumération\_: enquête/travail. ActionType ou Id doit être spécifiée"
-        types:
-          - uid: string
+- name: default
+  parameters:
+  - name: id
+    in: body
+    isRequired: true
+    description: ID associé à l’instance d’action
+    types:
+    - uid: string
+  - name: actionBody
+    in: body
+    isRequired: true
+    description: "Corps de l’action  \nObjet représentant les données nécessaires pour l’action correspondante. Les paramètres varient en fonction du type d’action."
+    types:
+    - uid: Request - Action Body
+  - name: responseId
+    in: body
+    description: Pour la mise à jour de la réponse existante
+    types:
+    - uid: string
+  - name: actionType
+    in: body
+    isRequired: true
+    description: 'Valeurs d’énumération : Survey/Job. L’un des actionType ou l’ID doit être spécifié'
+    types:
+    - uid: string
 requestHeader:
-  - name: Content-Type
-    in: header
-    isRequired: true
-    description: application/json
-    types:
-      - uid: string
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: Reçu à partir de la fin de l’authentification par jeton d’accès
-    types:
-      - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Jeton d’accès reçu depuis le point de terminaison auth
+  types:
+  - uid: string
 definitions:
-  - name: Request - Action Body
-    description: Corps d’action
-    kind: object
-    properties:
-      - name: Answers
-        description: Tableau des éléments de réponse pour l’Action donnée.
-        types:
-          - uid: string
-            isArray: true
-  - name: Request - PostingAResponseToAnAction
-    description: Publier une réponse à une action
-    kind: object
-    properties:
-      - name: id
-        description: ID associé à l’Instance de l’Action
-        types:
-          - uid: string
-      - name: actionBody
-        description: |-
-          Corps d’action  
-          Objet représentant les données nécessaires pour l’Action respectif. Paramètres seraient varient en fonction de différents de type d’Action.
-        types:
-          - uid: Request - Action Body
-      - name: responseId
-        description: Pour mettre à jour la réponse existante
-        types:
-          - uid: string
-      - name: actionType
-        description: "Valeurs d’énumération\_: enquête/travail. ActionType ou Id doit être spécifiée"
-        types:
-          - uid: string
+- name: Request - Action Body
+  description: Corps de l’action
+  kind: object
+  properties:
+  - name: Answers
+    description: Tableau d’éléments de réponse pour l’action donnée.
+    types:
+    - uid: string
+      isArray: true
+- name: Request - PostingAResponseToAnAction
+  description: Publication d’une réponse à une action
+  kind: object
+  properties:
+  - name: id
+    description: ID associé à l’instance d’action
+    types:
+    - uid: string
+  - name: actionBody
+    description: "Corps de l’action  \nObjet représentant les données nécessaires pour l’action correspondante. Les paramètres varient en fonction du type d’action."
+    types:
+    - uid: Request - Action Body
+  - name: responseId
+    description: Pour la mise à jour de la réponse existante
+    types:
+    - uid: string
+  - name: actionType
+    description: 'Valeurs d’énumération : Survey/Job. L’un des actionType ou l’ID doit être spécifié'
+    types:
+    - uid: string
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: ba0f0a552acb4997bbe98588392fa26c51b424c7
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384179"

@@ -1,19 +1,20 @@
 ### YamlMime:RESTOperationGroup
 uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis
 name: Authentication APIs
-summary: Ces API vous aider à l’accès pour les systèmes tiers 3e interagir avec une plateforme d’API Kaizala. Kaizala implémente le mécanisme d’autorisation en fonction de jeton personnalisé. Ce mécanisme utilise le concept d’actualisation et les jetons d’accès pour gérer les autorisations d’accès pour les API de plateforme Kaizala. /n
-apiVersion: '1.0'
+summary: Ces API permettent d’accéder aux systèmes tiers pour interagir avec la plateforme d’API Kaizala. Kaizala implémente un mécanisme d’autorisation basé sur des jetons personnalisés. Ce mécanisme utilise le concept de jeton d’actualisation et d’accès pour gérer l’autorisation d’accès pour les API de plateforme Kaizala. ouvertes
+apiVersion: "1.0"
 service: Kaizala
 operations:
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generateaccesstoken
-    summary: |-
-      Récupérer le jeton d’accès  
-      Cette API génère le jeton d’accès pour accéder aux ressources de Kaizala, lorsque le jeton d’actualisation, Id de connecteur d’Application et le Secret de connecteur d’Application est fourni.
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generatepin
-    summary: |-
-      Générer du code confidentiel unique  
-      Cette API génère le code confidentiel unique pour un numéro de téléphone mobile, lors de l’Id de connecteur d’Application est fourni.
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.getrefreshtoken
-    summary: |-
-      Connectez-vous à l’aide de code confidentiel et obtenir le jeton actualisation applicationId  
-      Cette API génère le jeton d’actualisation pour l’Id de connecteur d’Application donné, lorsque le code confidentiel, numéro de téléphone mobile et Id de connecteur d’Application est fourni.
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generateaccesstoken
+  summary: "Récupérer le jeton d’accès  \nCette API génère un jeton d’accès pour accéder aux ressources Kaizala, lorsque le jeton d’actualisation, l’ID d’application/connecteur et la clé secrète application/connecteur sont fournis"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generatepin
+  summary: "Générer un code confidentiel unique  \nCette API génère un code confidentiel unique pour un numéro de téléphone mobile, lorsque l’ID de l’application/connecteur est fourni."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.getrefreshtoken
+  summary: "Se connecter avec code confidentiel et applicationId pour obtenir un jeton d’actualisation  \nCette API génère un jeton d’actualisation pour l’ID d’application/connecteur donné, lorsque le code confidentiel, le numéro de téléphone mobile & ID d’application/connecteur est fourni."
+metadata:
+  ms.openlocfilehash: ddd268ce6fd4b49bed8cbaa09915c0b4fe4ddddc
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384105"
