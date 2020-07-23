@@ -3,39 +3,45 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.getallwebhooks
 name: Get All Webhooks
 service: Kaizala
 groupName: Subscription Webhooks
-apiVersion: '1.0'
-summary: |-
-  <span data-ttu-id="170c4-101">Obtenir tous les webhooks sur un groupe</span><span class="sxs-lookup"><span data-stu-id="170c4-101">Get all webhooks on a group</span></span>  
-  <span data-ttu-id="170c4-102">Cette API renvoie tous les webhooks sur un groupe</span><span class="sxs-lookup"><span data-stu-id="170c4-102">This API returns all webhooks on a group</span></span>
+apiVersion: "1.0"
+summary: "Obtenir tous les webhooks d’un groupe  \nCette API renvoie tous les webhooks d’un groupe"
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'GET https://{endpoint-url}/v1/webhook?objectId={objectId}&objectType={objectType}'
+- content: GET https://{endpoint-url}/v1/webhook?objectId={objectId}&objectType={objectType}
 uriParameters:
-  - name: objectId
-    in: query
-    isRequired: true
-    description: '<span data-ttu-id="170c4-103">Identificateur représentant l’objet dans le contexte dans lequel les webhooks doivent être créés. Pour l’argument typeobjet = groupe, l’identificateur de son groupe, pour ObjectType = Action, son actionId, pour ObjectType = ActionPackage, son id de package d’action</span><span class="sxs-lookup"><span data-stu-id="170c4-103">Identifier representing the object in which context the webhooks need to be created.For ObjectType=Group, its group''s Identifier, For ObjectType=Action, its actionId, For ObjectType=ActionPackage, its action-package-id</span></span>'
-    types:
-      - uid: string
-  - name: objectType
-    in: query
-    isRequired: true
-    description: "<span data-ttu-id=\"170c4-104\">Enum\_: Groupe/Action/ActionPackage</span><span class=\"sxs-lookup\"><span data-stu-id=\"170c4-104\">Enum: Group/Action/ActionPackage</span></span>"
-    types:
-      - uid: string
+- name: objectId
+  in: query
+  isRequired: true
+  description: Identificateur représentant l’objet dans lequel le contexte des webhooks doit être créé. Pour ObjectType = Group, l’identificateur de son groupe, pour ObjectType = action, son actionId, pour ObjectType = ActionPackage, son action-Package-ID
+  types:
+  - uid: string
+- name: objectType
+  in: query
+  isRequired: true
+  description: 'Énumération : Group/action/ActionPackage'
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: <span data-ttu-id="170c4-105">Reçu à partir de la fin de l’authentification par jeton d’accès</span><span class="sxs-lookup"><span data-stu-id="170c4-105">Access Token received from the auth end-point</span></span>
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Jeton d’accès reçu depuis le point de terminaison auth
+  types:
+  - uid: string
 definitions: []
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: f3830e57b1e032c1243000434649372a07c4e076
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384207"

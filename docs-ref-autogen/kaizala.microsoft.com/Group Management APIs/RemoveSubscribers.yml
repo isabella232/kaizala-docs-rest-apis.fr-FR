@@ -3,57 +3,64 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removesubscribers
 name: Remove Subscribers
 service: Kaizala
 groupName: Group Management APIs
-apiVersion: '1.0'
-summary: |-
-  <span data-ttu-id="6a471-101">Supprimer les abonnés à partir d’un groupe public</span><span class="sxs-lookup"><span data-stu-id="6a471-101">Remove Subscribers from a public group</span></span>  
-  <span data-ttu-id="6a471-102">Cette API permet à un utilisateur pour supprimer les abonnés à partir d’un groupe public</span><span class="sxs-lookup"><span data-stu-id="6a471-102">This API lets a user to remove subscribers from a public group</span></span>
+apiVersion: "1.0"
+summary: "Supprimer des abonnés d’un groupe public  \nCette API permet à un utilisateur de supprimer des abonnés d’un groupe public."
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'PUT https://{endpoint-url}/v1/groups/{test-public-group-id}/subscribers/remove'
+- content: PUT https://{endpoint-url}/v1/groups/{test-public-group-id}/subscribers/remove
 uriParameters:
-  - name: test-public-group-id
-    in: path
-    isRequired: true
-    description: ''
-    types:
-      - uid: string
+- name: test-public-group-id
+  in: path
+  isRequired: true
+  description: ''
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestBody:
-  - parameters:
-      - name: subscribers
-        in: body
-        isRequired: true
-        description: <span data-ttu-id="6a471-103">Liste de numéro de téléphone mobile abonné avec le code du pays</span><span class="sxs-lookup"><span data-stu-id="6a471-103">List of subscriber mobile number with country code</span></span>
-        types:
-          - uid: string
-            isArray: true
+- name: default
+  parameters:
+  - name: subscribers
+    in: body
+    isRequired: true
+    description: Liste des numéros de téléphone de l’abonné avec code de pays
+    types:
+    - uid: string
+      isArray: true
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: <span data-ttu-id="6a471-104">Reçu à partir de la fin de l’authentification par jeton d’accès</span><span class="sxs-lookup"><span data-stu-id="6a471-104">Access Token received from the auth end-point</span></span>
-    types:
-      - uid: string
-  - name: Content-Type
-    in: header
-    isRequired: true
-    description: <span data-ttu-id="6a471-105">application/json</span><span class="sxs-lookup"><span data-stu-id="6a471-105">application/json</span></span>
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Jeton d’accès reçu depuis le point de terminaison auth
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
 definitions:
-  - name: Request - Remove subscribers
-    description: <span data-ttu-id="6a471-106">Supprimer les abonnés à partir d’un groupe public</span><span class="sxs-lookup"><span data-stu-id="6a471-106">Remove Subscribers from a public group</span></span>
-    kind: object
-    properties:
-      - name: subscribers
-        description: <span data-ttu-id="6a471-107">Liste de numéro de téléphone mobile abonné avec le code du pays</span><span class="sxs-lookup"><span data-stu-id="6a471-107">List of subscriber mobile number with country code</span></span>
-        types:
-          - uid: string
-            isArray: true
+- name: Request - Remove subscribers
+  description: Supprimer des abonnés d’un groupe public
+  kind: object
+  properties:
+  - name: subscribers
+    description: Liste des numéros de téléphone de l’abonné avec code de pays
+    types:
+    - uid: string
+      isArray: true
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: 17b5d12f6040b4f3d2ec65a80fa8bc03deca2bc3
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384121"

@@ -3,103 +3,106 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingactionresp
 name: Posting Action Response
 service: Kaizala
 groupName: Content Creation APIs
-apiVersion: '1.0'
-summary: |-
-  <span data-ttu-id="fac37-101">Publier une réponse à une action</span><span class="sxs-lookup"><span data-stu-id="fac37-101">Posting a response to an action</span></span>  
-  <span data-ttu-id="fac37-102">Cette API vous permet de valider une réponse à une Action</span><span class="sxs-lookup"><span data-stu-id="fac37-102">This API lets you post a response to an Action</span></span>
+apiVersion: "1.0"
+summary: "Publication d’une réponse à une action  \nCette API vous permet de publier une réponse à une action."
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'POST https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-action-id}/responses'
+- content: POST https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-action-id}/responses
 uriParameters:
-  - name: test-group-id
-    in: path
-    isRequired: true
-    description: <span data-ttu-id="fac37-103">GUID associé au groupe donné</span><span class="sxs-lookup"><span data-stu-id="fac37-103">GUID associated with the given group</span></span>
-    types:
-      - uid: string
-  - name: test-action-id
-    in: path
-    isRequired: true
-    description: <span data-ttu-id="fac37-104">GUID associé en fonction de l’Action</span><span class="sxs-lookup"><span data-stu-id="fac37-104">GUID associated with given Action</span></span>
-    types:
-      - uid: string
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID associé au groupe donné
+  types:
+  - uid: string
+- name: test-action-id
+  in: path
+  isRequired: true
+  description: GUID associé à l’action donnée
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestBody:
-  - parameters:
-      - name: id
-        in: body
-        isRequired: true
-        description: <span data-ttu-id="fac37-105">ID associé à l’Instance de l’Action</span><span class="sxs-lookup"><span data-stu-id="fac37-105">ID associated with the Action Instance</span></span>
-        types:
-          - uid: string
-      - name: actionBody
-        in: body
-        isRequired: true
-        description: |-
-          <span data-ttu-id="fac37-106">Corps d’action</span><span class="sxs-lookup"><span data-stu-id="fac37-106">Action Body</span></span>  
-          <span data-ttu-id="fac37-107">Objet représentant les données nécessaires pour l’Action respectif.</span><span class="sxs-lookup"><span data-stu-id="fac37-107">Object representing data needed for the respective Action.</span></span> <span data-ttu-id="fac37-108">Paramètres seraient varient en fonction de différents de type d’Action.</span><span class="sxs-lookup"><span data-stu-id="fac37-108">Parameters would vary according to different Action-type.</span></span>
-        types:
-          - uid: Request - Action Body
-      - name: responseId
-        in: body
-        description: <span data-ttu-id="fac37-109">Pour mettre à jour la réponse existante</span><span class="sxs-lookup"><span data-stu-id="fac37-109">For updating existing response</span></span>
-        types:
-          - uid: string
-      - name: actionType
-        in: body
-        isRequired: true
-        description: "<span data-ttu-id=\"fac37-110\">Valeurs d’énumération\_: enquête/travail.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fac37-110\">Enum values: Survey/Job.</span></span> <span data-ttu-id=\"fac37-111\">ActionType ou Id doit être spécifiée</span><span class=\"sxs-lookup\"><span data-stu-id=\"fac37-111\">Either of actionType or Id should be specified</span></span>"
-        types:
-          - uid: string
+- name: default
+  parameters:
+  - name: id
+    in: body
+    isRequired: true
+    description: ID associé à l’instance d’action
+    types:
+    - uid: string
+  - name: actionBody
+    in: body
+    isRequired: true
+    description: "Corps de l’action  \nObjet représentant les données nécessaires pour l’action correspondante. Les paramètres varient en fonction du type d’action."
+    types:
+    - uid: Request - Action Body
+  - name: responseId
+    in: body
+    description: Pour la mise à jour de la réponse existante
+    types:
+    - uid: string
+  - name: actionType
+    in: body
+    isRequired: true
+    description: 'Valeurs d’énumération : Survey/Job. L’un des actionType ou l’ID doit être spécifié'
+    types:
+    - uid: string
 requestHeader:
-  - name: Content-Type
-    in: header
-    isRequired: true
-    description: <span data-ttu-id="fac37-112">application/json</span><span class="sxs-lookup"><span data-stu-id="fac37-112">application/json</span></span>
-    types:
-      - uid: string
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: <span data-ttu-id="fac37-113">Reçu à partir de la fin de l’authentification par jeton d’accès</span><span class="sxs-lookup"><span data-stu-id="fac37-113">Access Token received from the auth end-point</span></span>
-    types:
-      - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Jeton d’accès reçu depuis le point de terminaison auth
+  types:
+  - uid: string
 definitions:
-  - name: Request - Action Body
-    description: <span data-ttu-id="fac37-114">Corps d’action</span><span class="sxs-lookup"><span data-stu-id="fac37-114">Action Body</span></span>
-    kind: object
-    properties:
-      - name: Answers
-        description: <span data-ttu-id="fac37-115">Tableau des éléments de réponse pour l’Action donnée.</span><span class="sxs-lookup"><span data-stu-id="fac37-115">Array of Response items for the given Action.</span></span>
-        types:
-          - uid: string
-            isArray: true
-  - name: Request - PostingAResponseToAnAction
-    description: <span data-ttu-id="fac37-116">Publier une réponse à une action</span><span class="sxs-lookup"><span data-stu-id="fac37-116">Posting a response to an action</span></span>
-    kind: object
-    properties:
-      - name: id
-        description: <span data-ttu-id="fac37-117">ID associé à l’Instance de l’Action</span><span class="sxs-lookup"><span data-stu-id="fac37-117">ID associated with the Action Instance</span></span>
-        types:
-          - uid: string
-      - name: actionBody
-        description: |-
-          <span data-ttu-id="fac37-118">Corps d’action</span><span class="sxs-lookup"><span data-stu-id="fac37-118">Action Body</span></span>  
-          <span data-ttu-id="fac37-119">Objet représentant les données nécessaires pour l’Action respectif.</span><span class="sxs-lookup"><span data-stu-id="fac37-119">Object representing data needed for the respective Action.</span></span> <span data-ttu-id="fac37-120">Paramètres seraient varient en fonction de différents de type d’Action.</span><span class="sxs-lookup"><span data-stu-id="fac37-120">Parameters would vary according to different Action-type.</span></span>
-        types:
-          - uid: Request - Action Body
-      - name: responseId
-        description: <span data-ttu-id="fac37-121">Pour mettre à jour la réponse existante</span><span class="sxs-lookup"><span data-stu-id="fac37-121">For updating existing response</span></span>
-        types:
-          - uid: string
-      - name: actionType
-        description: "<span data-ttu-id=\"fac37-122\">Valeurs d’énumération\_: enquête/travail.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fac37-122\">Enum values: Survey/Job.</span></span> <span data-ttu-id=\"fac37-123\">ActionType ou Id doit être spécifiée</span><span class=\"sxs-lookup\"><span data-stu-id=\"fac37-123\">Either of actionType or Id should be specified</span></span>"
-        types:
-          - uid: string
+- name: Request - Action Body
+  description: Corps de l’action
+  kind: object
+  properties:
+  - name: Answers
+    description: Tableau d’éléments de réponse pour l’action donnée.
+    types:
+    - uid: string
+      isArray: true
+- name: Request - PostingAResponseToAnAction
+  description: Publication d’une réponse à une action
+  kind: object
+  properties:
+  - name: id
+    description: ID associé à l’instance d’action
+    types:
+    - uid: string
+  - name: actionBody
+    description: "Corps de l’action  \nObjet représentant les données nécessaires pour l’action correspondante. Les paramètres varient en fonction du type d’action."
+    types:
+    - uid: Request - Action Body
+  - name: responseId
+    description: Pour la mise à jour de la réponse existante
+    types:
+    - uid: string
+  - name: actionType
+    description: 'Valeurs d’énumération : Survey/Job. L’un des actionType ou l’ID doit être spécifié'
+    types:
+    - uid: string
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: ba0f0a552acb4997bbe98588392fa26c51b424c7
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384179"

@@ -3,96 +3,105 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.creategroup
 name: Create Group
 service: Kaizala
 groupName: Group Management APIs
-apiVersion: '1.0'
-summary: "<span data-ttu-id=\"0082c-101\">Créer un groupe</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-101\">Create a group</span></span>  \n<span data-ttu-id=\"0082c-102\">Cette API permet de créer un un groupe, y compris des groupes publics gérées.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-102\">This API allows creation of a a group, including Managed Public Groups.</span></span> <span data-ttu-id=\"0082c-103\">Il prend un tableau de chaînes comme entrée.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-103\">It takes array of string as input.</span></span> <span data-ttu-id=\"0082c-104\">Chaque chaîne est le numéro de téléphone mobile (avec le code du pays).</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-104\">Each string is mobile number(with country code).</span></span> <span data-ttu-id=\"0082c-105\">Cette API peut prendre au maximum 100 numéros de téléphone portable comme entrée.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-105\">This API can take maximum of 100 mobile numbers as input.</span></span>\n<span data-ttu-id=\"0082c-106\">GroupType\_: Groupe/ConnectGroup.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-106\">GroupType: Group/ConnectGroup.</span></span> <span data-ttu-id=\"0082c-107\">ConnectGroup pour le groupe public géré.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-107\">ConnectGroup for Managed public group.</span></span>"
+apiVersion: "1.0"
+summary: "Créer un groupe  \nCette API permet de créer un groupe, y compris les groupes publics gérés. Il prend un tableau de chaîne comme entrée. Chaque chaîne est numéro de téléphone mobile (avec code pays). Cette API peut prendre jusqu’à 100 numéros de téléphone mobile en entrée.\nGroupType : Group/ConnectGroup. ConnectGroup pour le groupe public géré."
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'POST https://{endpoint-url}/v1/groups'
+- content: POST https://{endpoint-url}/v1/groups
 uriParameters: []
 responses:
-  - name: 200 OK
-    description: ''
-    types:
-      - uid: Response - Create a group
+- name: 200 OK
+  description: ''
+  types:
+  - uid: Response - Create a group
 requestBody:
-  - parameters:
-      - name: name
-        in: body
-        isRequired: true
-        description: <span data-ttu-id="0082c-108">Nom de groupe</span><span class="sxs-lookup"><span data-stu-id="0082c-108">Group name</span></span>
-        types:
-          - uid: string
-      - name: welcomeMessage
-        in: body
-        isRequired: true
-        description: <span data-ttu-id="0082c-109">Message de bienvenue qui s’affiche à nouveau membre du groupe</span><span class="sxs-lookup"><span data-stu-id="0082c-109">Welcome message which will be displayed to new group member</span></span>
-        types:
-          - uid: string
-      - name: members
-        in: body
-        isRequired: true
-        description: "<span data-ttu-id=\"0082c-110\">Numéro de Mobile (avec le code du pays) des membres à ajouter.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-110\">Mobile number(with country code) of members to be added.</span></span> <span data-ttu-id=\"0082c-111\">Valeur par défaut\_: Utilisateur du jeton d’accès sera ajouté en tant qu’administrateur du groupe</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-111\">Default: Access token's user will be added as admin of the group</span></span>"
-        types:
-          - uid: string
-            isArray: true
-      - name: groupType
-        in: body
-        isRequired: true
-        description: "<span data-ttu-id=\"0082c-112\">Enum\_: Groupe/ConnectGroup.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-112\">Enum: Group/ConnectGroup.</span></span> <span data-ttu-id=\"0082c-113\">ConnectGroup créera un groupe Public gérés.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-113\">ConnectGroup will create Managed Public group.</span></span> <span data-ttu-id=\"0082c-114\">Par défaut\_: groupe</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-114\">Default: Group</span></span>"
-        types:
-          - uid: string
+- name: default
+  parameters:
+  - name: name
+    in: body
+    isRequired: true
+    description: Nom du groupe
+    types:
+    - uid: string
+  - name: welcomeMessage
+    in: body
+    isRequired: true
+    description: Message d’accueil qui sera affiché dans le nouveau membre de groupe
+    types:
+    - uid: string
+  - name: members
+    in: body
+    isRequired: true
+    description: 'Numéro de téléphone mobile (avec code de pays) des membres à ajouter. Valeur par défaut : l’utilisateur du jeton d’accès est ajouté en tant qu’administrateur du groupe.'
+    types:
+    - uid: string
+      isArray: true
+  - name: groupType
+    in: body
+    isRequired: true
+    description: 'Énumération : Group/ConnectGroup. ConnectGroup crée un groupe public géré. Valeur par défaut : groupe'
+    types:
+    - uid: string
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: '<span data-ttu-id="0082c-115">Reçu à partir de la fin de l’authentification par jeton d’accès</span><span class="sxs-lookup"><span data-stu-id="0082c-115">Access Token received from the auth end-point</span></span> '
-    types:
-      - uid: string
-  - name: Content-Type
-    in: header
-    isRequired: true
-    description: <span data-ttu-id="0082c-116">application/json</span><span class="sxs-lookup"><span data-stu-id="0082c-116">application/json</span></span>
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: 'Jeton d’accès reçu depuis le point de terminaison auth '
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
 definitions:
-  - name: Response - Create a group
-    kind: object
-    properties:
-      - name: groupId
-        description: '<span data-ttu-id="0082c-117">Identificateur de groupe qui peut être utilisé dans les appels d’API suivants</span><span class="sxs-lookup"><span data-stu-id="0082c-117">Group Identifier which can be used in subsequent API calls</span></span> '
-        types:
-          - uid: string
-      - name: groupName
-        description: <span data-ttu-id="0082c-118">Nom de groupe</span><span class="sxs-lookup"><span data-stu-id="0082c-118">Group name</span></span>
-        types:
-          - uid: string
-      - name: membersAdded
-        description: '<span data-ttu-id="0082c-119">True si tous les membres sont bien ajoutés</span><span class="sxs-lookup"><span data-stu-id="0082c-119">True if all members are successfully added</span></span> '
-        types:
-          - uid: boolean
-  - name: Request - Create a managed public group
-    description: <span data-ttu-id="0082c-120">Créer un groupe public géré</span><span class="sxs-lookup"><span data-stu-id="0082c-120">Create a managed public group</span></span>
-    kind: object
-    properties:
-      - name: name
-        description: <span data-ttu-id="0082c-121">Nom de groupe</span><span class="sxs-lookup"><span data-stu-id="0082c-121">Group name</span></span>
-        types:
-          - uid: string
-      - name: welcomeMessage
-        description: <span data-ttu-id="0082c-122">Message de bienvenue qui s’affiche à nouveau membre du groupe</span><span class="sxs-lookup"><span data-stu-id="0082c-122">Welcome message which will be displayed to new group member</span></span>
-        types:
-          - uid: string
-      - name: members
-        description: "<span data-ttu-id=\"0082c-123\">Numéro de Mobile (avec le code du pays) des membres à ajouter.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-123\">Mobile number(with country code) of members to be added.</span></span> <span data-ttu-id=\"0082c-124\">Valeur par défaut\_: Utilisateur du jeton d’accès sera ajouté en tant qu’administrateur du groupe</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-124\">Default: Access token's user will be added as admin of the group</span></span>"
-        types:
-          - uid: string
-            isArray: true
-      - name: groupType
-        description: "<span data-ttu-id=\"0082c-125\">Enum\_: Groupe/ConnectGroup.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-125\">Enum: Group/ConnectGroup.</span></span> <span data-ttu-id=\"0082c-126\">ConnectGroup créera un groupe Public gérés.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-126\">ConnectGroup will create Managed Public group.</span></span> <span data-ttu-id=\"0082c-127\">Par défaut\_: groupe</span><span class=\"sxs-lookup\"><span data-stu-id=\"0082c-127\">Default: Group</span></span>"
-        types:
-          - uid: string
+- name: Response - Create a group
+  kind: object
+  properties:
+  - name: groupId
+    description: 'Identificateur de groupe qui peut être utilisé dans les appels d’API suivants '
+    types:
+    - uid: string
+  - name: groupName
+    description: Nom du groupe
+    types:
+    - uid: string
+  - name: membersAdded
+    description: 'True si tous les membres sont ajoutés avec succès '
+    types:
+    - uid: boolean
+- name: Request - Create a managed public group
+  description: Créer un groupe public géré
+  kind: object
+  properties:
+  - name: name
+    description: Nom du groupe
+    types:
+    - uid: string
+  - name: welcomeMessage
+    description: Message d’accueil qui sera affiché dans le nouveau membre de groupe
+    types:
+    - uid: string
+  - name: members
+    description: 'Numéro de téléphone mobile (avec code de pays) des membres à ajouter. Valeur par défaut : l’utilisateur du jeton d’accès est ajouté en tant qu’administrateur du groupe.'
+    types:
+    - uid: string
+      isArray: true
+  - name: groupType
+    description: 'Énumération : Group/ConnectGroup. ConnectGroup crée un groupe public géré. Valeur par défaut : groupe'
+    types:
+    - uid: string
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: bd71c3310b4edf67794b8b74052af6e088914570
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384199"
