@@ -1,0 +1,70 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generateaccesstoken
+name: Generate Access Token
+service: Kaizala
+groupName: Authentication APIs
+apiVersion: "1.0"
+summary: "Récupérer le jeton d’accès  \nCette API génère un jeton d’accès pour accéder Kaizala ressources, lorsque le jeton d’actualisation, l’ID d’application/connecteur et la question secrète application/connecteur sont fournis."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: GET https://api.kaiza.la/v1/accessToken
+uriParameters: []
+responses:
+- name: 200 OK
+  description: ''
+  types:
+  - uid: Response - Access Token
+requestHeader:
+- name: applicationId
+  in: header
+  isRequired: true
+  description: ID associé au connecteur
+  types:
+  - uid: string
+- name: applicationSecret
+  in: header
+  isRequired: true
+  description: Secret associé au connecteur
+  types:
+  - uid: string
+- name: refreshToken
+  in: header
+  isRequired: true
+  description: refreshToken partagé par l’administrateur Kaizala groupe lorsque le connecteur respectif a obtenu l’accès au groupe
+  types:
+  - uid: string
+definitions:
+- name: Response - Access Token
+  description: Récupérer le jeton d’accès
+  kind: object
+  properties:
+  - name: accessToken
+    description: Jeton d’accès reçu à partir du point de fin d’th
+    types:
+    - uid: string
+  - name: endpointUrl
+    description: Une fois l’ment réussi, une URL de point de terminaison qui doit être utilisée comme api-base-url pour effectuer des appels d’API ultérieurs est renvoyée.
+    types:
+    - uid: string
+  - name: accessTokenExpiry
+    description: Il indique l’heure d’expiration pour accessToken en temps époque (millisecondes)
+    types:
+    - uid: integer
+  - name: scope
+    description: Étendue des autorisations sur les Kaizala données qui fournissent un jeton d’accès
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: "Récupérer le jeton d’accès  \nCette API génère un jeton d’accès pour accéder Kaizala ressources, lorsque le jeton d’actualisation, l’ID d’application/connecteur et la question secrète application/connecteur sont fournis."
+  ms.openlocfilehash: 7ba0cbdb86bb42911109a2ba7bc461e6248d5007
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302467"
+errorCodes: []

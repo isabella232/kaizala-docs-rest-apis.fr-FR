@@ -1,0 +1,91 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.getrefreshtoken
+name: Get Refresh Token
+service: Kaizala
+groupName: Authentication APIs
+apiVersion: "1.0"
+summary: "Connexion avec code confidentiel et applicationId pour obtenir le jeton d’actualisation  \nCette API génère un jeton d’actualisation pour l’ID d’application/connecteur donné, lorsque la broche, le numéro de téléphone mobile &'ID d’application/connecteur est fourni."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://api.kaiza.la/v1/loginWithPinAndApplicationId
+uriParameters: []
+responses:
+- name: 200 OK
+  description: ''
+  types:
+  - uid: Response - Refresh Token
+requestBody:
+- name: default
+  parameters:
+  - name: mobileNumber
+    in: body
+    isRequired: true
+    description: Numéro mobile pour lequel le jeton serait généré
+    types:
+    - uid: string
+  - name: applicationId
+    in: body
+    isRequired: true
+    description: ID associé au connecteur
+    types:
+    - uid: string
+  - name: pin
+    in: body
+    isRequired: true
+    description: OtP envoyé au numéro mobile donné
+    types:
+    - uid: integer
+requestHeader:
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+definitions:
+- name: Response - Refresh Token
+  description: Connexion avec code confidentiel et applicationId pour obtenir le jeton d’actualisation
+  kind: object
+  properties:
+  - name: refreshToken
+    description: refreshToken partagé par l’administrateur Kaizala groupe lorsque le connecteur respectif a obtenu l’accès au groupe
+    types:
+    - uid: string
+  - name: grantedScope
+    description: Étendue d’accès accordée à l’application/connecteur donné
+    types:
+    - uid: string
+  - name: refreshTokenExpiry
+    description: Il indique l’heure d’expiration de refreshToken en temps époque (millisecondes)
+    types:
+    - uid: integer
+- name: Request - Refresh Token
+  description: Connexion avec code confidentiel et applicationId pour obtenir le jeton d’actualisation
+  kind: object
+  properties:
+  - name: mobileNumber
+    description: Numéro mobile pour lequel le jeton serait généré
+    types:
+    - uid: string
+  - name: applicationId
+    description: ID associé au connecteur
+    types:
+    - uid: string
+  - name: pin
+    description: OtP envoyé au numéro mobile donné
+    types:
+    - uid: integer
+examples: []
+security: []
+metadata:
+  description: "Connexion avec code confidentiel et applicationId pour obtenir le jeton d’actualisation  \nCette API génère un jeton d’actualisation pour l’ID d’application/connecteur donné, lorsque la broche, le numéro de téléphone mobile &'ID d’application/connecteur est fourni."
+  ms.openlocfilehash: cb48b77027948721a354b072d35e76b85289178a
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302505"
+errorCodes: []

@@ -1,0 +1,29 @@
+### YamlMime:RESTOperationGroup
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis
+name: Content Creation APIs
+summary: 'Point de fin de l’API pour envoyer des instances de Kaizala actions aux groupes de conversation à l’intérieur Kaizala. <br /> L’étendue actuelle consiste à prendre en charge les types d’action suivants : <Table>  <tr><th> Action </th> <th>POST pris en charge </th><th> ID </th></tr> <tr><td> Pièce jointe d’image </td> <td> Oui </td> <td>  image  </td></tr> <tr><td> Pièce jointe audio </td> <td> Oui </td> <td>  audio  </td></tr> <tr><td> Pièce jointe de document </td> <td> Oui </td>  <td>  document  </td></tr> <tr><td> Pièce jointe du contact </td> <td> Non </td> <td>  N/D  </td></tr> <tr><td> Travail </td> <td> Oui </td>  <td>  Travail  </td></tr> <tr><td> Enquête </td> <td> Oui </td> <td>  enquête  </td></tr> <tr><td> Photo avec emplacement </td> <td> Non </td> <td>  photoWithLocation  </td></tr> <tr><td> Let’s Meet </td> <td> Oui </td> <td>  LetsMeet  </td></tr> <tr><td> Sondage rapide </td> <td> Oui </td> <td>  Sondage  </td></tr> <tr><td> Emplacement du partage </td> <td> Non </td> <td>  shareLocation  </td></tr> <tr><td> Emplacement de la demande </td> <td> Non </td> <td>  N/D  </td></tr> <tr><td> Emplacement en direct </td> <td> Non </td> <td>  N/D  </td></tr> <tr><td> Annonce </td> <td> Oui </td> <td>  Annonce  </td></tr> </Table> '
+apiVersion: "1.0"
+service: Kaizala
+metadata:
+  description: 'Point de fin de l’API pour envoyer des instances de Kaizala actions aux groupes de conversation à l’intérieur Kaizala. <br /> L’étendue actuelle consiste à prendre en charge les types d’action suivants : <Table>  <tr><th> Action </th> <th>POST pris en charge </th><th> ID </th></tr> <tr><td> Pièce jointe d’image </td> <td> Oui </td> <td>  image  </td></tr> <tr><td> Pièce jointe audio </td> <td> Oui </td> <td>  audio  </td></tr> <tr><td> Pièce jointe de document </td> <td> Oui </td>  <td>  document  </td></tr> <tr><td> Pièce jointe du contact </td> <td> Non </td> <td>  N/D  </td></tr> <tr><td> Travail </td> <td> Oui </td>  <td>  Travail  </td></tr> <tr><td> Enquête </td> <td> Oui </td> <td>  enquête  </td></tr> <tr><td> Photo avec emplacement </td> <td> Non </td> <td>  photoWithLocation  </td></tr> <tr><td> Let’s Meet </td> <td> Oui </td> <td>  LetsMeet  </td></tr> <tr><td> Sondage rapide </td> <td> Oui </td> <td>  Sondage  </td></tr> <tr><td> Emplacement du partage </td> <td> Non </td> <td>  shareLocation  </td></tr> <tr><td> Emplacement de la demande </td> <td> Non </td> <td>  N/D  </td></tr> <tr><td> Emplacement en direct </td> <td> Non </td> <td>  N/D  </td></tr> <tr><td> Annonce </td> <td> Oui </td> <td>  Annonce  </td></tr> </Table> '
+  ms.openlocfilehash: 48e9c4f8e2bed4f5b86f6f4b3a2adcbc7f3b7525
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302504"
+operations:
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postcustomactionsubscriber
+  summary: "Publier une action personnalisée sur des abonnés dans un groupe public  \nCette API vous permet de publier une action personnalisée sur des sous-bers dans un groupe public"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingactionresponse
+  summary: "Publication d’une réponse à une action  \nCette API vous permet de publier une réponse à une action"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingsurveyresponse
+  summary: "Publication d’une réponse à une enquête  \nCette API vous permet de publier une réponse à une enquête donnée"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendmessage
+  summary: "Envoyer un message sur un groupe  \nEnvoyer un message sur un groupe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendmessagetosubscriber
+  summary: "Envoyer un message à des abonnés dans un groupe public  \nCette API vous permet d’envoyer un message aux abonnés d’un groupe public"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendsurvey
+  summary: "Envoyer une enquête sur un groupe  \nCette API vous permet de créer une enquête et d’envoyer un message à un groupe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.uploadmedia
+  summary: "Télécharger multimédia  \nCette API télécharge du contenu multimédia (image, document, audio, album ou vidéo)"

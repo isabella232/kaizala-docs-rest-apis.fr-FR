@@ -1,0 +1,97 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.createsubgroup
+name: Create Subgroup
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: "1.0"
+summary: "Créer un sous-groupe  \nAPI pour créer un groupe.\nParamètres facultatifs : Members: string array. Chaque chaîne est un numéro mobile (avec code pays). Max strings-100\n    \n    GroupType: Group/ConnectGroup. ConnectGroup for Managed public group."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://{endpoint-url}/v1/groups/{test-group-id}/subgroups
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID associé au groupe donné
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestBody:
+- name: default
+  parameters:
+  - name: name
+    in: body
+    isRequired: true
+    description: Nom du groupe
+    types:
+    - uid: string
+  - name: welcomeMessage
+    in: body
+    isRequired: true
+    description: Message de bienvenue qui s’affiche pour le nouveau membre du groupe
+    types:
+    - uid: string
+  - name: members
+    in: body
+    isRequired: true
+    description: 'Numéro mobile (avec code pays) des membres à ajouter. Par défaut : l’utilisateur du jeton d’accès est ajouté en tant qu’administrateur du groupe'
+    types:
+    - uid: string
+      isArray: true
+  - name: groupType
+    in: body
+    isRequired: true
+    description: 'Enum : Group/ConnectGroup. ConnectGroup crée un groupe public géré. Par défaut : Groupe'
+    types:
+    - uid: string
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Jeton d’accès reçu à partir du point de fin d’th
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+definitions:
+- name: Request - Create a managed public group
+  description: Créer un groupe public géré
+  kind: object
+  properties:
+  - name: name
+    description: Nom du groupe
+    types:
+    - uid: string
+  - name: welcomeMessage
+    description: Message de bienvenue qui s’affiche pour le nouveau membre du groupe
+    types:
+    - uid: string
+  - name: members
+    description: 'Numéro mobile (avec code pays) des membres à ajouter. Par défaut : l’utilisateur du jeton d’accès est ajouté en tant qu’administrateur du groupe'
+    types:
+    - uid: string
+      isArray: true
+  - name: groupType
+    description: 'Enum : Group/ConnectGroup. ConnectGroup crée un groupe public géré. Par défaut : Groupe'
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: "Créer un sous-groupe  \nAPI pour créer un groupe.\nParamètres facultatifs : Members: string array. Chaque chaîne est un numéro mobile (avec code pays)."
+  ms.openlocfilehash: fc483234ca09fa98fec999300fa85b1031a02aa7
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302481"
+errorCodes: []

@@ -1,0 +1,48 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchgroupdetails
+name: Fetch Group Details
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: "1.0"
+summary: "Récupérer les détails du groupe  \nCette API peut être utilisée pour récupérer les détails d’un groupe"
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: GET https://{endpoint-url}/v1/groups/{test-group-id}
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID associé au groupe donné
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestHeader:
+- name: applicationId
+  in: header
+  isRequired: true
+  description: ID associé au connecteur
+  types:
+  - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Jeton d’accès reçu à partir du point de fin d’th
+  types:
+  - uid: string
+definitions: []
+examples: []
+security: []
+metadata:
+  description: "En savoir plus sur Kaizala service : extraire les détails du groupe  \nCette API peut être utilisée pour récupérer les détails d’un groupe"
+  ms.openlocfilehash: fb87e16412e6dd50cc517bd7a8e7d6a734199a65
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302480"
+errorCodes: []
