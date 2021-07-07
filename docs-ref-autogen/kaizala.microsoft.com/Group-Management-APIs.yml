@@ -1,0 +1,41 @@
+### YamlMime:RESTOperationGroup
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis
+name: Group Management APIs
+summary: Ces API permettent aux administrateurs de groupe d’accéder aux ressources de groupe et de gérer les appartenances aux groupes en conséquence. <br />
+apiVersion: "1.0"
+service: Kaizala
+metadata:
+  description: Ces API permettent aux administrateurs de groupe d’accéder aux ressources de groupe et de gérer les appartenances aux groupes en conséquence. <br />
+  ms.openlocfilehash: 9e0e3a9a0ad9eb8317f2e1f5d038ad27213da0db
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302484"
+operations:
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addmembers
+  summary: "Ajouter des membres à un groupe  \nCette API permet d’ajouter des membres à un groupe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubgroup
+  summary: "Cette API permet l’ajout d’un groupe en tant que sous-groupe à un autre groupe  \nAjouter un groupe en tant que sous-groupe à un autre groupe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubscribers
+  summary: "Ajouter des abonnés à un groupe public  \nCette API ajoute des abonnés à un groupe public"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.creategroup
+  summary: "Créer un groupe  \nCette API permet la création d’un groupe, y compris les groupes publics gérés. Il prend un tableau de chaînes comme entrée. Chaque chaîne est un numéro mobile (avec code pays). Cette API peut prendre un maximum de 100 numéros mobiles comme entrée.\nGroupType : Group/ConnectGroup. ConnectGroup pour le groupe public géré."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.createsubgroup
+  summary: "Créer un sous-groupe  \nAPI pour créer un groupe.\nParamètres facultatifs : Members: string array. Chaque chaîne est un numéro mobile (avec code pays). Max strings-100\n    \n    GroupType: Group/ConnectGroup. ConnectGroup for Managed public group."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchdirectgroups
+  summary: "Récupérer des groupes directs  \nCette API renvoie tous les groupes directs associés à l’utilisateur"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchgroupdetails
+  summary: "Récupérer les détails du groupe  \nCette API peut être utilisée pour récupérer les détails d’un groupe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchmembers
+  summary: "Récupérer les membres d’un groupe  \nCette API renvoie la liste des membres d’un groupe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchsubgroup
+  summary: Cette API permet d’extraire les sous-groupes d’un groupe
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.getsubscribers
+  summary: "Obtenir les abonnés d’un groupe public  \nCette API récupère la liste des abonnés d’un groupe public géré"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removegroupassubgroup
+  summary: Supprimer un groupe en tant que sous-groupe dans un autre groupe
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removemembers
+  summary: "Supprimer des membres d’un groupe  \nCette API permet de supprimer des membres d’un groupe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removesubscribers
+  summary: Cette API permet à un utilisateur de supprimer des abonnés d’un groupe public

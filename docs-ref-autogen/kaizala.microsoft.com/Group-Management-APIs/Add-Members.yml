@@ -1,0 +1,67 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addmembers
+name: Add Members
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: "1.0"
+summary: "Ajouter des membres à un groupe  \nCette API permet d’ajouter des membres à un groupe"
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: PUT https://{endpoint-url}/v1/groups/{test-group-id}/members
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID associé au groupe donné
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestBody:
+- name: default
+  parameters:
+  - name: members
+    in: body
+    isRequired: true
+    description: Tableau de numéros de téléphone (avec code pays) des nouveaux membres à ajouter
+    types:
+    - uid: string
+      isArray: true
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Jeton d’accès reçu à partir du point de fin d’th
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+definitions:
+- name: Request - Add members to a group
+  description: Ajouter des membres à un groupe
+  kind: object
+  properties:
+  - name: members
+    description: Tableau de numéros de téléphone (avec code pays) des nouveaux membres à ajouter
+    types:
+    - uid: string
+      isArray: true
+examples: []
+security: []
+metadata:
+  description: "En savoir plus sur Kaizala service - Ajouter des membres à un groupe  \nCette API permet d’ajouter des membres à un groupe"
+  ms.openlocfilehash: 351b4d4c5a9276a1233fabf93c316fed94850760
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302485"
+errorCodes: []

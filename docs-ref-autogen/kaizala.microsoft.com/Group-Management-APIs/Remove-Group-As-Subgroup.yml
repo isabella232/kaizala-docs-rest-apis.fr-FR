@@ -1,0 +1,48 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removegroupassubgroup
+name: Remove Group As Subgroup
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: "1.0"
+summary: Supprimer un groupe en tant que sous-groupe dans un autre groupe
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: DELETE https://{endpoint-url}/v1/groups/{test-group-id}/subGroups/{test-sub-group-id}
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID associé au groupe donné
+  types:
+  - uid: string
+- name: test-sub-group-id
+  in: path
+  isRequired: true
+  description: ''
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Jeton d’accès reçu à partir du point de fin d’th
+  types:
+  - uid: string
+definitions: []
+examples: []
+security: []
+metadata:
+  description: 'En savoir plus sur Kaizala service : supprimer un groupe en tant que sous-groupe dans un autre groupe'
+  ms.openlocfilehash: c52f6bc6ce8c0063761e6093f52bf8a644a00593
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302465"
+errorCodes: []

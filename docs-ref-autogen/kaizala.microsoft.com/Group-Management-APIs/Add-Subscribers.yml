@@ -1,0 +1,67 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubscribers
+name: Add Subscribers
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: "1.0"
+summary: "Ajouter des abonnés à un groupe public  \nCette API ajoute des abonnés à un groupe public"
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: PUT https://{endpoint-url}/v1/groups/{test-public-group-id}/subscribers/add
+uriParameters:
+- name: test-public-group-id
+  in: path
+  isRequired: true
+  description: ''
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestBody:
+- name: default
+  parameters:
+  - name: subscribers
+    in: body
+    isRequired: true
+    description: Liste du numéro mobile d’abonné avec code pays
+    types:
+    - uid: string
+      isArray: true
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Jeton d’accès reçu à partir du point de fin d’th
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+definitions:
+- name: Request - Remove subscribers
+  description: Supprimer des abonnés d’un groupe public
+  kind: object
+  properties:
+  - name: subscribers
+    description: Liste du numéro mobile d’abonné avec code pays
+    types:
+    - uid: string
+      isArray: true
+examples: []
+security: []
+metadata:
+  description: "En savoir plus sur Kaizala service : ajouter des abonnés à un groupe public  \nCette API ajoute des abonnés à un groupe public"
+  ms.openlocfilehash: 2af1cff120a024d2d4e1399eee6c80970a995459
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302482"
+errorCodes: []

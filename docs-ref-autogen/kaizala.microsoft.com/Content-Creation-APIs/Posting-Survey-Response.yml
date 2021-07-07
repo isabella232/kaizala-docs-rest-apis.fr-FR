@@ -1,0 +1,130 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingsurveyresponse
+name: Posting Survey Response
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: "1.0"
+summary: "Publication d’une réponse à une enquête  \nCette API vous permet de publier une réponse à une enquête donnée"
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-survey-id}/responses
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID associé au groupe donné
+  types:
+  - uid: string
+- name: test-survey-id
+  in: path
+  isRequired: true
+  description: ''
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestBody:
+- name: default
+  parameters:
+  - name: actionType
+    in: body
+    isRequired: true
+    description: Type d’action
+    types:
+    - uid: string
+  - name: actionBody
+    in: body
+    isRequired: true
+    description: Corps de l’action d’enquête
+    types:
+    - uid: SurveyActionBody
+requestHeader:
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Jeton d’accès reçu à partir du point de fin d’th
+  types:
+  - uid: string
+definitions:
+- name: SurveyActionBody
+  description: Corps de l’action d’enquête
+  kind: object
+  properties:
+  - name: responseName
+    description: Nom de la réponse
+    types:
+    - uid: string
+  - name: responseLocation
+    description: ResponseLocation
+    types:
+    - uid: ResponseLocation
+  - name: Answers
+    description: Réponse
+    types:
+    - uid: Answer
+      isArray: true
+- name: Request - PostingAResponseToASurvey
+  description: Publication d’une réponse à une enquête
+  kind: object
+  properties:
+  - name: actionType
+    description: Type d’action
+    types:
+    - uid: string
+  - name: actionBody
+    description: Corps de l’action d’enquête
+    types:
+    - uid: SurveyActionBody
+- name: ResponseLocation
+  description: ResponseLocation
+  kind: object
+  properties:
+  - name: latitude
+    description: Coordonnées de latitude pour l’emplacement
+    types:
+    - uid: integer
+  - name: longitude
+    description: Coordonnées de longitude pour l’emplacement
+    types:
+    - uid: integer
+  - name: name
+    description: Nom de l’emplacement correspondant à la co-coordonnées de l’emplacement
+    types:
+    - uid: string
+- name: Answer
+  description: Réponse
+  kind: object
+  properties:
+  - name: lt
+    description: Coordonnées de latitude pour l’emplacement
+    types:
+    - uid: integer
+  - name: lg
+    description: Coordonnées de longitude pour l’emplacement
+    types:
+    - uid: integer
+  - name: n
+    description: ''
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: "En savoir plus sur Kaizala service : publication d’une réponse à une enquête  \nCette API vous permet de publier une réponse à une enquête donnée"
+  ms.openlocfilehash: d9b5e78f6db1f691796812810f5d33103630f6ef
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302506"
+errorCodes: []

@@ -1,0 +1,21 @@
+### YamlMime:RESTOperationGroup
+uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis
+name: Authentication APIs
+summary: Ces API permettent d’accéder aux systèmes tiers pour interagir avec Kaizala’API. Kaizala implémente un mécanisme d’autorisation basé sur un jeton personnalisé. Ce mécanisme utilise le concept de jetons d’actualisation et d’accès pour gérer l’autorisation d’accès pour les API de Kaizala web. /n
+apiVersion: "1.0"
+service: Kaizala
+metadata:
+  description: Ces API permettent d’accéder aux systèmes tiers pour interagir avec Kaizala’API. Kaizala implémente un mécanisme d’autorisation basé sur un jeton personnalisé.
+  ms.openlocfilehash: 3a027eebdb56fcc246e884a6ff2d25b3fee36eab
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302498"
+operations:
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generateaccesstoken
+  summary: "Récupérer le jeton d’accès  \nCette API génère un jeton d’accès pour accéder Kaizala ressources, lorsque le jeton d’actualisation, l’ID d’application/connecteur et la question secrète application/connecteur sont fournis."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generatepin
+  summary: "Générer One-Time code confidentiel  \nCette API génère un code confidentiel à une seule heure pour un numéro mobile, lorsque l’ID d’application/connecteur est fourni."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.getrefreshtoken
+  summary: "Connexion avec code confidentiel et applicationId pour obtenir le jeton d’actualisation  \nCette API génère un jeton d’actualisation pour l’ID d’application/connecteur donné, lorsque la broche, le numéro de téléphone mobile &'ID d’application/connecteur est fourni."
